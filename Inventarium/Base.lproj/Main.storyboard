@@ -70,7 +70,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Title" id="jgA-gr-2n1"/>
+                                <navigationItem title="Title" id="jgA-gr-2n1">
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="wUp-s9-1dl"/>
+                                </navigationItem>
                             </items>
                         </navigationBar>
                         <prototypes>
