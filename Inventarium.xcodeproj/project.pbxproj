@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D31C8B120111D5C00208F71 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D31C8B020111D5C00208F71 /* NewItemViewController.swift */; };
 		9D6307BC200FC34700D6D134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6307BB200FC34700D6D134 /* AppDelegate.swift */; };
 		9D6307C3200FC34700D6D134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6307C1200FC34700D6D134 /* Main.storyboard */; };
 		9D6307C5200FC34700D6D134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6307C4200FC34700D6D134 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D31C8B020111D5C00208F71 /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		9D6307B8200FC34700D6D134 /* Inventarium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inventarium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6307BB200FC34700D6D134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6307C2200FC34700D6D134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				9D6307BB200FC34700D6D134 /* AppDelegate.swift */,
 				9D6307ED200FC3AA00D6D134 /* HistoryTableViewController.swift */,
 				9D6307EB200FC39B00D6D134 /* ItemsTableViewController.swift */,
+				9D31C8B020111D5C00208F71 /* NewItemViewController.swift */,
 				9D6307EF200FC3B700D6D134 /* Item.swift */,
 				9D6307F1200FC3CC00D6D134 /* ItemsTableViewCell.swift */,
 				9D6307C1200FC34700D6D134 /* Main.storyboard */,
@@ -270,6 +273,7 @@
 			files = (
 				9D6307F2200FC3CC00D6D134 /* ItemsTableViewCell.swift in Sources */,
 				9D6307F0200FC3B700D6D134 /* Item.swift in Sources */,
+				9D31C8B120111D5C00208F71 /* NewItemViewController.swift in Sources */,
 				9D6307EC200FC39B00D6D134 /* ItemsTableViewController.swift in Sources */,
 				9D6307BC200FC34700D6D134 /* AppDelegate.swift in Sources */,
 				9D6307EE200FC3AA00D6D134 /* HistoryTableViewController.swift in Sources */,
