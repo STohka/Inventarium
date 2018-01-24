@@ -141,7 +141,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="New Item" id="BKF-TI-M4i">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8id-0f-LWt"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8id-0f-LWt">
+                                            <connections>
+                                                <action selector="cancel:" destination="Yvx-n3-54b" id="MSC-LW-v0b"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="5Sp-Xm-Mdj"/>
                                     </navigationItem>
                                 </items>
@@ -171,6 +175,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="7bO-tg-lWC"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="Bpg-F5-yAl" id="Uw1-DC-XaX"/>
+                        <outlet property="saveButton" destination="5Sp-Xm-Mdj" id="XD1-4R-Xiq"/>
+                        <outlet property="tNumberTextField" destination="Tdo-td-Im7" id="zoC-uJ-lBN"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1878" y="257"/>
