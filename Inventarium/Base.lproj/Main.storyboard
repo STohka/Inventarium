@@ -71,9 +71,12 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Title" id="jgA-gr-2n1">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="edit" id="oi4-jP-TEf"/>
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="wUp-s9-1dl">
                                         <connections>
-                                            <segue destination="Yvx-n3-54b" kind="show" id="PVC-KN-LYa"/>
+                                            <segue destination="Yvx-n3-54b" kind="popoverPresentation" popoverAnchorBarButtonItem="wUp-s9-1dl" id="kir-PA-U6M">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
@@ -123,6 +126,7 @@
         <!--New Item View Controller-->
         <scene sceneID="Ild-zb-OKZ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l5F-Z3-ftq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Yvx-n3-54b" customClass="NewItemViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xfz-n9-adw"/>
@@ -137,11 +141,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="New Item" id="BKF-TI-M4i">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8id-0f-LWt">
-                                            <connections>
-                                                <action selector="cancel:" destination="Yvx-n3-54b" id="l1S-Sx-oSs"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8id-0f-LWt"/>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="5Sp-Xm-Mdj"/>
                                     </navigationItem>
                                 </items>
@@ -170,13 +170,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="cancel" destination="8id-0f-LWt" id="dJu-mC-rfL"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="7bO-tg-lWC"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l5F-Z3-ftq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686" y="257"/>
+            <point key="canvasLocation" x="1878" y="257"/>
         </scene>
         <!--Checkout-->
         <scene sceneID="U6e-CO-pDQ">
