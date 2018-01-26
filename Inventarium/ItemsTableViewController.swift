@@ -115,6 +115,17 @@ class ItemsTableViewController: UITableViewController {
         items += [item1, item2]
         
     }
+    
+    //Actions
+    @IBAction func unwindToItemList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? NewItemViewController, let item = sourceViewController.item {
+            let newIndexPath = IndexPath(row: items.count, section: 0)
+            items.append(item)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+        
+        
+    }
 
 
 }

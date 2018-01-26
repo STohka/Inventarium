@@ -141,7 +141,11 @@
                                 <items>
                                     <navigationItem title="New Item" id="BKF-TI-M4i">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8id-0f-LWt"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5Sp-Xm-Mdj"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5Sp-Xm-Mdj">
+                                            <connections>
+                                                <segue destination="na9-BE-pMi" kind="unwind" unwindAction="unwindToItemListWithSender:" id="pDm-gb-GDg"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -177,6 +181,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5F-Z3-ftq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="na9-BE-pMi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1878" y="257"/>
         </scene>

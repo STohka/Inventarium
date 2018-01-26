@@ -43,5 +43,5 @@ class NewItemViewController: UIViewController {
         item = Item(name : name, currentCount : currentCount!, totalCount : totalCount!)
     }
     
-
-    }
+    
+}
