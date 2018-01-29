@@ -18,8 +18,12 @@ class NewItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
+        
+        // Enable the Save button only if the text field has a valid Meal name.
+        updateSaveButtonState()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,5 +47,18 @@ class NewItemViewController: UIViewController {
         item = Item(name : name, currentCount : currentCount!, totalCount : totalCount!)
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        saveButton.isEnabled = false
+    }
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let text = itemNameInput.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateSaveButtonState()
+       
+    }
     
 }
