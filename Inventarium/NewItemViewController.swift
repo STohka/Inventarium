@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class NewItemViewController: UIViewController {
+class NewItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var itemNameInput: UITextField!
     @IBOutlet weak var itemNumberInput: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -18,7 +18,7 @@ class NewItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        itemNameInput.delegate = self
 
         // Do any additional setup after loading the view.
         
@@ -50,12 +50,17 @@ class NewItemViewController: UIViewController {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // Disable the Save button while editing.
         saveButton.isEnabled = false
+        
     }
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
         let text = itemNameInput.text ?? ""
-        saveButton.isEnabled = !text.isEmpty
+        let number = itemNumberInput.text ?? ""
+        let isName = !text.isEmpty
+        let isNumber = !number.isEmpty
+        saveButton.isEnabled = isName && isNumber
     }
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
        
