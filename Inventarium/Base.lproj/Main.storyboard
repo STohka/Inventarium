@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RSn-8n-Mya" id="Zv7-eq-kxv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -140,7 +140,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="New Item" id="BKF-TI-M4i">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8id-0f-LWt"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8id-0f-LWt">
+                                            <connections>
+                                                <action selector="cancel:" destination="Yvx-n3-54b" id="Kos-oE-Exq"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="5Sp-Xm-Mdj">
                                             <connections>
                                                 <segue destination="na9-BE-pMi" kind="unwind" unwindAction="unwindToItemListWithSender:" id="pDm-gb-GDg"/>
@@ -175,6 +179,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7bO-tg-lWC"/>
                     <connections>
+                        <outlet property="cancel" destination="8id-0f-LWt" id="6am-wZ-qEW"/>
                         <outlet property="itemNameInput" destination="Bpg-F5-yAl" id="PLg-ke-KCy"/>
                         <outlet property="itemNumberInput" destination="Tdo-td-Im7" id="bTh-pp-JQ8"/>
                         <outlet property="saveButton" destination="5Sp-Xm-Mdj" id="CNQ-GH-5Fh"/>

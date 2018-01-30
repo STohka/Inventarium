@@ -13,6 +13,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var itemNameInput: UITextField!
     @IBOutlet weak var itemNumberInput: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var cancel: UIBarButtonItem!
     
     var item : Item?
     
@@ -64,6 +65,10 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
        
+    }
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
