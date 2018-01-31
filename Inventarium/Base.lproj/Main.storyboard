@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RSn-8n-Mya" id="Zv7-eq-kxv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -153,29 +153,34 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bpg-F5-yAl">
-                                <rect key="frame" x="53" y="107" width="308" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bpg-F5-yAl">
+                                <rect key="frame" x="142.66666666666669" y="183" width="129.00000000000006" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tdo-td-Im7">
-                                <rect key="frame" x="159" y="262" width="97" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tdo-td-Im7">
+                                <rect key="frame" x="174.33333333333337" y="333" width="65.666666666666657" height="60"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Number of Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auR-Id-tL4">
-                                <rect key="frame" x="125" y="206" width="165" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Number of Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auR-Id-tL4">
+                                <rect key="frame" x="125" y="267.66666666666669" width="165" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tdo-td-Im7" firstAttribute="centerY" secondItem="ZpO-lz-7AI" secondAttribute="centerY" constant="-5" id="1Bz-J6-plj"/>
+                            <constraint firstItem="Bpg-F5-yAl" firstAttribute="centerX" secondItem="ZpO-lz-7AI" secondAttribute="centerX" id="7NY-ZK-hTl"/>
+                            <constraint firstItem="Tdo-td-Im7" firstAttribute="centerX" secondItem="ZpO-lz-7AI" secondAttribute="centerX" id="Cwq-w8-wAb"/>
+                            <constraint firstItem="Bpg-F5-yAl" firstAttribute="centerY" secondItem="ZpO-lz-7AI" secondAttribute="centerY" constant="-170" id="gtd-HP-oEZ"/>
+                            <constraint firstItem="auR-Id-tL4" firstAttribute="centerX" secondItem="ZpO-lz-7AI" secondAttribute="centerX" id="rUd-4X-3ya"/>
+                            <constraint firstItem="auR-Id-tL4" firstAttribute="centerY" secondItem="ZpO-lz-7AI" secondAttribute="centerY" constant="-90" id="rxT-Q2-ZLq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7bO-tg-lWC"/>
                     <connections>

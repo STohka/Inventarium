@@ -21,8 +21,6 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         itemNameInput.delegate = self
 
-        // Do any additional setup after loading the view.
-        
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
     }
