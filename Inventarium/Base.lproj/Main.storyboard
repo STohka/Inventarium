@@ -71,7 +71,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Title" id="jgA-gr-2n1">
-                                    <barButtonItem key="leftBarButtonItem" systemItem="edit" id="oi4-jP-TEf"/>
+                                    <barButtonItem key="leftBarButtonItem" systemItem="edit" id="HbE-Tm-cgG"/>
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="wUp-s9-1dl">
                                         <connections>
                                             <segue destination="Yvx-n3-54b" kind="popoverPresentation" popoverAnchorBarButtonItem="wUp-s9-1dl" id="kir-PA-U6M">
