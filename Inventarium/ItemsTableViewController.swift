@@ -10,7 +10,9 @@ import UIKit
 import os.log
 
 class ItemsTableViewController: UITableViewController {
+    
     @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var addItem: UIBarButtonItem!
     
       var items = [Item]()
 
@@ -95,9 +97,11 @@ class ItemsTableViewController: UITableViewController {
         
         if (self.tableView.isEditing) {
             editButton.title = "Edit"
+            showAddbutton()
             self.tableView.setEditing(false, animated: true)
         } else {
             editButton.title = "Done"
+            hideAddbutton()
             self.tableView.setEditing(true, animated: true)
         }
     }
@@ -120,5 +124,16 @@ class ItemsTableViewController: UITableViewController {
         return .none
     }
 
+    
+    // For Deleting Items
+    
+    
+    func hideAddbutton() {
+        addItem.isEnabled = false
+    }
+    
+    func showAddbutton() {
+        addItem.isEnabled = true
+    }
     
   }
