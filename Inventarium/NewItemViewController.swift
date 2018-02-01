@@ -59,11 +59,12 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         let isNumber = !number.isEmpty
         saveButton.isEnabled = isName && isNumber
     }
-
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
-       
+        
     }
+
+
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
