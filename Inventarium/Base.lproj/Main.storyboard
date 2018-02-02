@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="28" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RSn-8n-Mya" id="Zv7-eq-kxv">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -74,6 +74,7 @@
                                     <barButtonItem key="leftBarButtonItem" systemItem="edit" id="HbE-Tm-cgG">
                                         <connections>
                                             <action selector="doEditWithSender:" destination="7wU-xy-60E" id="Jhz-hu-yOK"/>
+                                            <segue destination="1gi-Pj-SgR" kind="showDetail" id="QEM-Iv-STs"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="wUp-s9-1dl">
@@ -91,7 +92,7 @@
                                 <rect key="frame" x="0.0" y="72" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xir-jN-QKP" id="mfX-eM-Gv3">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gys-vu-bA7">
@@ -113,7 +114,6 @@
                                 <connections>
                                     <outlet property="itemCountLabel" destination="gys-vu-bA7" id="cPD-8Y-bAt"/>
                                     <outlet property="itemNameLabel" destination="MXA-yF-GII" id="RFd-WY-PWr"/>
-                                    <segue destination="1gi-Pj-SgR" kind="show" id="nBQ-Rl-03v"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -279,7 +279,7 @@
                                     <navigationItem title="Edit Item" id="erc-Mg-E99">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Nii-6a-SNh">
                                             <connections>
-                                                <action selector="cancel:" destination="Yvx-n3-54b" id="tr9-mP-gss"/>
+                                                <action selector="cancel:" destination="1gi-Pj-SgR" id="aNW-mQ-TgB"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ukW-4d-FOW"/>
@@ -301,6 +301,14 @@
                             <constraint firstItem="C8I-vf-ahe" firstAttribute="centerY" secondItem="uZ4-Ix-Ab2" secondAttribute="centerY" constant="-220" id="z2Q-ax-kr2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentItemCountInput" destination="HJc-5k-tLP" id="Ysj-DX-Acd"/>
+                        <outlet property="currentItemCountStepper" destination="f1E-9w-onJ" id="kle-d5-SI5"/>
+                        <outlet property="itemNameInput" destination="FVC-pf-xFg" id="zXp-Pa-mSF"/>
+                        <outlet property="saveButton" destination="ukW-4d-FOW" id="NBt-zt-8kA"/>
+                        <outlet property="totalItemCountInput" destination="C8I-vf-ahe" id="oXS-4Q-ARn"/>
+                        <outlet property="totalItemCountStepper" destination="9Xw-Hr-aSZ" id="TiW-Ju-ebn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRu-Ib-hLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
