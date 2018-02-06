@@ -9,22 +9,26 @@
 import UIKit
 import os.log
 
-class NewItemViewController: UIViewController, UITextFieldDelegate {
+class EditItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var itemNameInput: UITextField!
-    @IBOutlet weak var itemNumberInput: UITextField!
+    @IBOutlet weak var totalItemCountInput: UITextField!
+    @IBOutlet weak var currentItemCountInput: UITextField!
+    @IBOutlet weak var totalItemCountStepper: UIStepper!
+    @IBOutlet weak var currentItemCountStepper: UIStepper!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet weak var cancel: UIBarButtonItem!
+
+
     
     var item : Item?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         itemNameInput.delegate = self
-
+        
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,8 +44,8 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         }
         
         let name = itemNameInput.text ?? ""
-        let currentCount = Int(itemNumberInput.text!)
-        let totalCount = Int(itemNumberInput.text!)
+        let currentCount = Int(currentItemCountInput.text!)
+        let totalCount = Int(totalItemCountInput.text!)
         
         item = Item(name : name, currentCount : currentCount!, totalCount : totalCount!)
     }
@@ -54,7 +58,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
         let text = itemNameInput.text ?? ""
-        let number = itemNumberInput.text ?? ""
+        let number = totalItemCountInput.text ?? ""
         let isName = !text.isEmpty
         let isNumber = !number.isEmpty
         saveButton.isEnabled = isName && isNumber
@@ -63,8 +67,8 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         updateSaveButtonState()
         
     }
-
-
+    
+    
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)

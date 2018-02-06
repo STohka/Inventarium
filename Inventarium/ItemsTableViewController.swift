@@ -91,8 +91,56 @@ class ItemsTableViewController: UITableViewController {
         }
         
     }
-
     
+    
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+    
+        switch(segue.identifier ?? "") {
+           
+        case "ShowDetail":
+            guard let ItemDetailViewController = segue.destination as? EditItemViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedItemCell = sender as? ItemsTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedItemCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedMeal = items[indexPath.row]
+            ItemDetailViewController.item = selectedMeal
+  
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
+            
+    
+    }
+func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        if identifier == "segueTest" {
+            
+            if (!tableView.isEditing) {
+                
+                return false
+            }
+                
+            else {
+                return true
+            }
+        }
+        return true
+    }
+   
+  
+
+
+
+
     @IBAction func doEdit(sender: AnyObject) {
         
         if (self.tableView.isEditing) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1114" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina5_5" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -34,15 +34,15 @@
             <objects>
                 <tableViewController id="ryS-K3-oyS" userLabel="History" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="AOy-HL-7dO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="RSn-8n-Mya">
-                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
+                                <rect key="frame" x="0.0" y="28" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RSn-8n-Mya" id="Zv7-eq-kxv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -63,17 +63,18 @@
             <objects>
                 <tableViewController id="7wU-xy-60E" customClass="ItemsTableViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="C1m-Jo-wEV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="dHg-1P-Xed">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Title" id="jgA-gr-2n1">
                                     <barButtonItem key="leftBarButtonItem" title="Edit" id="HbE-Tm-cgG">
                                         <connections>
                                             <action selector="doEditWithSender:" destination="7wU-xy-60E" id="Jhz-hu-yOK"/>
+                                            <segue destination="1gi-Pj-SgR" kind="showDetail" id="QEM-Iv-STs"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="wUp-s9-1dl">
@@ -88,10 +89,10 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemsTableViewCell" rowHeight="90" id="Xir-jN-QKP" customClass="ItemsTableViewCell" customModule="Inventarium" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="90"/>
+                                <rect key="frame" x="0.0" y="72" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xir-jN-QKP" id="mfX-eM-Gv3">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gys-vu-bA7">
@@ -162,19 +163,19 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bpg-F5-yAl">
-                                <rect key="frame" x="142.66666666666669" y="183" width="129.00000000000006" height="30"/>
+                                <rect key="frame" x="143" y="183" width="129" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tdo-td-Im7">
-                                <rect key="frame" x="174.33333333333337" y="333" width="65.666666666666657" height="60"/>
+                                <rect key="frame" x="174" y="333" width="66" height="60"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Number of Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auR-Id-tL4">
-                                <rect key="frame" x="125" y="267.66666666666669" width="165" height="21"/>
+                                <rect key="frame" x="125" y="268" width="165" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -212,7 +213,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ICN-7B-DGB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eZb-iL-EXq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -221,6 +222,98 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWh-3g-vUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="790" y="1077"/>
+        </scene>
+        <!--Edit Item View Controller-->
+        <scene sceneID="EYo-Pf-rRi">
+            <objects>
+                <viewController id="1gi-Pj-SgR" customClass="EditItemViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bx1-RJ-6v2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lae-IV-gxH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uZ4-Ix-Ab2">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C8I-vf-ahe">
+                                <rect key="frame" x="351" y="262" width="66" height="60"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Number of Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFv-GV-RcX">
+                                <rect key="frame" x="303" y="202" width="162" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Number of Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWY-hj-xXw">
+                                <rect key="frame" x="293" y="372" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJc-5k-tLP">
+                                <rect key="frame" x="351" y="432" width="66" height="60"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9Xw-Hr-aSZ">
+                                <rect key="frame" x="337" y="335" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stepper>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="f1E-9w-onJ">
+                                <rect key="frame" x="337" y="516" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stepper>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVC-pf-xFg">
+                                <rect key="frame" x="320" y="132" width="129" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VVo-nU-Tih">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Edit Item" id="erc-Mg-E99">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Nii-6a-SNh">
+                                            <connections>
+                                                <action selector="cancel:" destination="1gi-Pj-SgR" id="aNW-mQ-TgB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ukW-4d-FOW"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GFv-GV-RcX" firstAttribute="centerX" secondItem="uZ4-Ix-Ab2" secondAttribute="centerX" id="3fh-jL-SIs"/>
+                            <constraint firstItem="HJc-5k-tLP" firstAttribute="centerY" secondItem="uZ4-Ix-Ab2" secondAttribute="centerY" constant="-50" id="Nej-7F-BNi"/>
+                            <constraint firstItem="FVC-pf-xFg" firstAttribute="centerX" secondItem="uZ4-Ix-Ab2" secondAttribute="centerX" id="T9F-py-XDB"/>
+                            <constraint firstItem="FVC-pf-xFg" firstAttribute="centerY" secondItem="uZ4-Ix-Ab2" secondAttribute="centerY" constant="-365" id="VDw-kJ-zBw"/>
+                            <constraint firstItem="dWY-hj-xXw" firstAttribute="centerY" secondItem="uZ4-Ix-Ab2" secondAttribute="centerY" constant="-130" id="eKV-mO-XAI"/>
+                            <constraint firstItem="HJc-5k-tLP" firstAttribute="centerX" secondItem="uZ4-Ix-Ab2" secondAttribute="centerX" id="g63-Tw-oAC"/>
+                            <constraint firstItem="dWY-hj-xXw" firstAttribute="centerX" secondItem="uZ4-Ix-Ab2" secondAttribute="centerX" id="gdL-u9-dak"/>
+                            <constraint firstItem="GFv-GV-RcX" firstAttribute="centerY" secondItem="uZ4-Ix-Ab2" secondAttribute="centerY" constant="-300" id="wnb-Af-zsP"/>
+                            <constraint firstItem="C8I-vf-ahe" firstAttribute="centerX" secondItem="uZ4-Ix-Ab2" secondAttribute="centerX" id="yXQ-am-DnZ"/>
+                            <constraint firstItem="C8I-vf-ahe" firstAttribute="centerY" secondItem="uZ4-Ix-Ab2" secondAttribute="centerY" constant="-220" id="z2Q-ax-kr2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="currentItemCountInput" destination="HJc-5k-tLP" id="Ysj-DX-Acd"/>
+                        <outlet property="currentItemCountStepper" destination="f1E-9w-onJ" id="kle-d5-SI5"/>
+                        <outlet property="itemNameInput" destination="FVC-pf-xFg" id="zXp-Pa-mSF"/>
+                        <outlet property="saveButton" destination="ukW-4d-FOW" id="NBt-zt-8kA"/>
+                        <outlet property="totalItemCountInput" destination="C8I-vf-ahe" id="oXS-4Q-ARn"/>
+                        <outlet property="totalItemCountStepper" destination="9Xw-Hr-aSZ" id="TiW-Ju-ebn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YRu-Ib-hLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879" y="944"/>
         </scene>
     </scenes>
     <resources>
