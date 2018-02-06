@@ -73,15 +73,16 @@ class ItemsTableViewController: UITableViewController {
     
     //Actions
     @IBAction func unwindToItemList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? NewItemViewController, let item = sourceViewController.item {
+        if let sourceViewController = sender.source as? NewItemViewController,
+            let item = sourceViewController.item {
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                // Update an existing meal.
+                // Update an existing item.
                 items[selectedIndexPath.row] = item
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }
             else {
-                // Add a new meal.
+                // Add a new item.
                 let newIndexPath = IndexPath(row: items.count, section: 0)
                 
                 items.append(item)
@@ -92,15 +93,13 @@ class ItemsTableViewController: UITableViewController {
         
     }
     
-    
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-    
+        
         switch(segue.identifier ?? "") {
-           
-        case "ShowDetail":
-            guard let ItemDetailViewController = segue.destination as? EditItemViewController else {
+            case "Edit Item":
+
+            guard let itemDetailViewController = segue.destination as? EditItemViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             
@@ -112,30 +111,17 @@ class ItemsTableViewController: UITableViewController {
                 fatalError("The selected cell is not being displayed by the table")
             }
             
-            let selectedMeal = items[indexPath.row]
-            ItemDetailViewController.item = selectedMeal
-  
+            let selectedItem = items[indexPath.row]
+            itemDetailViewController.item = selectedItem
+       
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+            
         }
             
+    }
     
-    }
-func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
-        if identifier == "segueTest" {
-            
-            if (!tableView.isEditing) {
-                
-                return false
-            }
-                
-            else {
-                return true
-            }
-        }
-        return true
-    }
-   
+    
   
 
 

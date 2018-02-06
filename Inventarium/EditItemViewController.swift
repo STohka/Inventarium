@@ -25,6 +25,14 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         itemNameInput.delegate = self
         
+        if let item = item {
+            navigationItem.title = item.name
+            itemNameInput.text = item.name
+            totalItemCountInput.text = String (item.totalCount)
+            currentItemCountInput.text = String (item.currentCount)
+        }
+
+        
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
     }
