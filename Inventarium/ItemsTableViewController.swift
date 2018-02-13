@@ -93,7 +93,7 @@ class ItemsTableViewController: UITableViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "EditItem"{
         super.prepare(for: segue, sender: sender)
         guard let itemDetailViewController = segue.destination as? EditItemViewController else {
             fatalError("Unexpected destination: \(segue.destination)")
@@ -110,7 +110,7 @@ class ItemsTableViewController: UITableViewController {
         let selectedItem = items[indexPath.row]
         itemDetailViewController.item = selectedItem
 
-        
+        }
     }
     @IBOutlet weak var sendToEdit: ItemsTableViewCell!
 
