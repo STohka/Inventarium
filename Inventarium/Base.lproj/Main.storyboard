@@ -114,7 +114,7 @@
                                 <connections>
                                     <outlet property="itemCountLabel" destination="gys-vu-bA7" id="cPD-8Y-bAt"/>
                                     <outlet property="itemNameLabel" destination="MXA-yF-GII" id="RFd-WY-PWr"/>
-                                    <segue destination="1gi-Pj-SgR" kind="show" identifier="Edit Item" id="cDt-r5-fnz"/>
+                                    <segue destination="1gi-Pj-SgR" kind="show" identifier="EditItem" id="cDt-r5-fnz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

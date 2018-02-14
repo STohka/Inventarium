@@ -93,26 +93,27 @@ class ItemsTableViewController: UITableViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EditItem"{
-        super.prepare(for: segue, sender: sender)
-        guard let itemDetailViewController = segue.destination as? EditItemViewController else {
-            fatalError("Unexpected destination: \(segue.destination)")
-        }
-        
-        guard let selectedItemCell = sender as? ItemsTableViewCell else {
-            fatalError("Unexpected sender: \(sender)")
-        }
-        
-        guard let indexPath = tableView.indexPath(for: selectedItemCell) else {
-            fatalError("The selected cell is not being displayed by the table")
-        }
-        
-        let selectedItem = items[indexPath.row]
-        itemDetailViewController.item = selectedItem
+       
+            if segue.identifier == "EditItem"{
+                
+                super.prepare(for: segue, sender: sender)
+                guard let itemDetailViewController = segue.destination as? EditItemViewController else {
+                    fatalError("Unexpected destination: \(segue.destination)")
+                }
+                
+                guard let selectedItemCell = sender as? ItemsTableViewCell else {
+                    fatalError("Unexpected sender: \(sender)")
+                }
+                
+                guard let indexPath = tableView.indexPath(for: selectedItemCell) else {
+                    fatalError("The selected cell is not being displayed by the table")
+                }
+                
+                let selectedItem = items[indexPath.row]
+                itemDetailViewController.item = selectedItem
+            }
 
-        }
     }
-    @IBOutlet weak var sendToEdit: ItemsTableViewCell!
 
     
     
