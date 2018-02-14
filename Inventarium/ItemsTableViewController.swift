@@ -19,6 +19,7 @@ class ItemsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSampleItems()
+        self.tableView.allowsSelectionDuringEditing = true
 
     }
 
@@ -93,7 +94,8 @@ class ItemsTableViewController: UITableViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
+        if !(tableView.isEditing){
+        }
             if segue.identifier == "EditItem"{
                 
                 super.prepare(for: segue, sender: sender)
@@ -113,6 +115,7 @@ class ItemsTableViewController: UITableViewController {
                 itemDetailViewController.item = selectedItem
             }
 
+        
     }
 
     
