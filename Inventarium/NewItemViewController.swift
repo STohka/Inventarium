@@ -51,6 +51,8 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         saveButton.isEnabled = false
         
     }
+    
+    
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
         let text = itemNameInput.text ?? ""
@@ -59,6 +61,13 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         let isNumber = !number.isEmpty
         saveButton.isEnabled = isName && isNumber
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Hide the keyboard.
+        textField.resignFirstResponder()
+        return true
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
         
