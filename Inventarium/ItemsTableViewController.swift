@@ -114,7 +114,6 @@ class ItemsTableViewController: UITableViewController {
                 let selectedItem = items[indexPath.row]
                 itemDetailViewController.item = selectedItem
             }
-
         
     }
     
