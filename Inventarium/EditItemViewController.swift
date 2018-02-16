@@ -30,6 +30,10 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
             itemNameInput.text = item.name
             totalItemCountInput.text = String (item.totalCount)
             currentItemCountInput.text = String (item.currentCount)
+            totalItemCountStepper.value = Double(item.totalCount)
+            currentItemCountStepper.value = Double(item.currentCount)
+            totalItemCountStepper.maximumValue = Double.infinity
+            currentItemCountStepper.maximumValue = Double.infinity
         }
 
         
@@ -76,7 +80,13 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func totalStepAction(_ sender: Any) {
+        
+        
+    }
     
+    @IBAction func currentStepAction(_ sender: Any) {
+    }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)

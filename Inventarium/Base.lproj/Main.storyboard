@@ -306,9 +306,15 @@
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9Xw-Hr-aSZ">
                                 <rect key="frame" x="337" y="327.5" width="94" height="29"/>
+                                <connections>
+                                    <action selector="totalStepAction:" destination="1gi-Pj-SgR" eventType="valueChanged" id="1MX-UC-oOv"/>
+                                </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="f1E-9w-onJ">
                                 <rect key="frame" x="337" y="497.5" width="94" height="29"/>
+                                <connections>
+                                    <action selector="currentStepAction:" destination="1gi-Pj-SgR" eventType="valueChanged" id="aha-Wq-q1c"/>
+                                </connections>
                             </stepper>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVC-pf-xFg">
                                 <rect key="frame" x="320" y="132" width="129" height="30"/>
