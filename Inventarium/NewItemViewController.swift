@@ -10,6 +10,7 @@ import UIKit
 import os.log
 
 class NewItemViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var itemNameInput: UITextField!
     @IBOutlet weak var itemNumberInput: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
