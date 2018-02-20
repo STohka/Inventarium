@@ -80,12 +80,17 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    @IBAction func totalStepAction(_ sender: Any) {
+    @IBAction func totalStepAction(_ sender: UIStepper) {
+        item?.totalCount = Int(sender.value)
         
+        totalItemCountInput.text = String (describing: item!.totalCount)
         
     }
     
-    @IBAction func currentStepAction(_ sender: Any) {
+    @IBAction func currentStepAction(_ sender: UIStepper) {
+        item?.currentCount = Int(sender.value)
+        currentItemCountInput.text = String (describing: item!.currentCount)
+        
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
