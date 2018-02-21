@@ -23,21 +23,22 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        itemNameInput.delegate = self
+
         
         if let item = item {
             navigationItem.title = item.name
             itemNameInput.text = item.name
             totalItemCountInput.text = String (item.totalCount)
             currentItemCountInput.text = String (item.currentCount)
-            totalItemCountStepper.value = Double(item.totalCount)
-            currentItemCountStepper.value = Double(item.currentCount)
             totalItemCountStepper.maximumValue = Double.infinity
             currentItemCountStepper.maximumValue = Double.infinity
+            totalItemCountStepper.value = Double(item.totalCount)
+            currentItemCountStepper.value = Double(item.currentCount)
+       
         }
 
         
-        // Enable the Save button only if the text field has a valid Meal name.
+        // Enable the Save button only if the text field has a valid Item name.
         updateSaveButtonState()
     }
     
@@ -58,8 +59,10 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         let name = itemNameInput.text ?? ""
         let currentCount = Int(currentItemCountInput.text!)
         let totalCount = Int(totalItemCountInput.text!)
+        item?.currentCount = currentCount!
+        item?.totalCount = totalCount!
+        item?.name = name
         
-        item = Item(name : name, currentCount : currentCount!, totalCount : totalCount!)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -82,7 +85,6 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func totalStepAction(_ sender: UIStepper) {
         item?.totalCount = Int(sender.value)
-        
         totalItemCountInput.text = String (describing: item!.totalCount)
         
     }
@@ -90,7 +92,6 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     @IBAction func currentStepAction(_ sender: UIStepper) {
         item?.currentCount = Int(sender.value)
         currentItemCountInput.text = String (describing: item!.currentCount)
-        
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
