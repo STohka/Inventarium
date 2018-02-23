@@ -16,13 +16,19 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var totalItemCountStepper: UIStepper!
     @IBOutlet weak var currentItemCountStepper: UIStepper!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    
 
 
     
     var item : Item?
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
 
         
         if let item = item {
@@ -36,6 +42,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
             currentItemCountStepper.value = Double(item.currentCount)
        
         }
+
 
         
         // Enable the Save button only if the text field has a valid Item name.
@@ -96,6 +103,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+
     }
     
 }
