@@ -17,11 +17,6 @@ class Item {
     
     init?(name: String, currentCount: Int, totalCount: Int) {
         
-        // The name must not be empty
-        guard !name.isEmpty else {
-            return nil
-        }
-        
         self.name = name
         self.currentCount = currentCount
         self.totalCount = totalCount

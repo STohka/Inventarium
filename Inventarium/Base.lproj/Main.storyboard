@@ -208,7 +208,7 @@
         <!--Checkout-->
         <scene sceneID="U6e-CO-pDQ">
             <objects>
-                <viewController id="nNK-Pj-peF" userLabel="Checkout" sceneMemberID="viewController">
+                <viewController id="nNK-Pj-peF" userLabel="Checkout" customClass="NewCheckoutViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nO0-db-W9Q"/>
                         <viewControllerLayoutGuide type="bottom" id="ICN-7B-DGB"/>
