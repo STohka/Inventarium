@@ -335,7 +335,11 @@
                                                 <action selector="cancel:" destination="1gi-Pj-SgR" id="aNW-mQ-TgB"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ukW-4d-FOW"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ukW-4d-FOW">
+                                            <connections>
+                                                <segue destination="t6s-V9-Rbz" kind="unwind" unwindAction="unwindToItemListWithSender:" id="XdP-f1-neG"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -384,6 +388,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRu-Ib-hLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="t6s-V9-Rbz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1878.90625" y="943.94531249999989"/>
         </scene>
