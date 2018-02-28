@@ -61,7 +61,13 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         let number = itemNumberInput.text ?? ""
         let isName = !text.isEmpty
         let isNumber = !number.isEmpty
-        saveButton.isEnabled = isName && isNumber
+        if isName == isNumber{
+        saveButton.isEnabled = true
+        }
+        else
+        {
+            saveButton.isEnabled = false
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
