@@ -27,7 +27,8 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.totalItemCountInput.inputView = LNNumberpad.default()
+        self.currentItemCountInput.inputView = LNNumberpad.default()
 
 
         
