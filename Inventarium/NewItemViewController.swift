@@ -21,6 +21,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         itemNameInput.delegate = self
+        itemNumberInput.delegate = self
         self.itemNumberInput.inputView = LNNumberpad.default()
 
         // Enable the Save button only if the text field has a valid Meal name.

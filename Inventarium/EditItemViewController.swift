@@ -30,6 +30,9 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         self.totalItemCountInput.inputView = LNNumberpad.default()
         self.currentItemCountInput.inputView = LNNumberpad.default()
 
+        itemNameInput.delegate = self
+        totalItemCountInput.delegate = self
+        currentItemCountInput.delegate = self
 
         
         if let item = item {
@@ -98,6 +101,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func currentStepAction(_ sender: UIStepper) {
+        
         item?.currentCount = Int(sender.value)
         currentItemCountInput.text = String (describing: item!.currentCount)
     }
