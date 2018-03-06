@@ -18,6 +18,8 @@
 		9D6307EE200FC3AA00D6D134 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6307ED200FC3AA00D6D134 /* HistoryTableViewController.swift */; };
 		9D6307F0200FC3B700D6D134 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6307EF200FC3B700D6D134 /* Item.swift */; };
 		9D6307F2200FC3CC00D6D134 /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6307F1200FC3CC00D6D134 /* ItemsTableViewCell.swift */; };
+		9DE8D6F020471BF1005D65BD /* LNNumberpad.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8D6EC20471BF1005D65BD /* LNNumberpad.m */; };
+		9DE8D6F220471BF1005D65BD /* LNNumberpad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8D6EF20471BF1005D65BD /* LNNumberpad.xib */; };
 		9DF490D22023891800288DA2 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF490D12023891800288DA2 /* EditItemViewController.swift */; };
 		BC79D023203DE6FF009AE26A /* checkoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79D022203DE6FF009AE26A /* checkoutItem.swift */; };
 		BC79D025203DF17A009AE26A /* NewCheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79D024203DF17A009AE26A /* NewCheckoutViewController.swift */; };
@@ -58,6 +60,10 @@
 		9D6307ED200FC3AA00D6D134 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		9D6307EF200FC3B700D6D134 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		9D6307F1200FC3CC00D6D134 /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewCell.swift; sourceTree = "<group>"; };
+		9DE8D6EB20471BF0005D65BD /* Inventarium-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Inventarium-Bridging-Header.h"; sourceTree = "<group>"; };
+		9DE8D6EC20471BF1005D65BD /* LNNumberpad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LNNumberpad.m; path = LNNumberpad/LNNumberpad.m; sourceTree = SOURCE_ROOT; };
+		9DE8D6EE20471BF1005D65BD /* LNNumberpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNNumberpad.h; path = LNNumberpad/LNNumberpad.h; sourceTree = SOURCE_ROOT; };
+		9DE8D6EF20471BF1005D65BD /* LNNumberpad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LNNumberpad.xib; path = LNNumberpad/LNNumberpad.xib; sourceTree = SOURCE_ROOT; };
 		9DF490D12023891800288DA2 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 		BC79D022203DE6FF009AE26A /* checkoutItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkoutItem.swift; sourceTree = "<group>"; };
 		BC79D024203DF17A009AE26A /* NewCheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCheckoutViewController.swift; sourceTree = "<group>"; };
@@ -120,10 +126,14 @@
 				BC79D022203DE6FF009AE26A /* checkoutItem.swift */,
 				9D6307F1200FC3CC00D6D134 /* ItemsTableViewCell.swift */,
 				9DF490D12023891800288DA2 /* EditItemViewController.swift */,
+				9DE8D6EE20471BF1005D65BD /* LNNumberpad.h */,
+				9DE8D6EC20471BF1005D65BD /* LNNumberpad.m */,
+				9DE8D6EF20471BF1005D65BD /* LNNumberpad.xib */,
 				9D6307C1200FC34700D6D134 /* Main.storyboard */,
 				9D6307C4200FC34700D6D134 /* Assets.xcassets */,
 				9D6307C6200FC34700D6D134 /* LaunchScreen.storyboard */,
 				9D6307C9200FC34700D6D134 /* Info.plist */,
+				9DE8D6EB20471BF0005D65BD /* Inventarium-Bridging-Header.h */,
 			);
 			path = Inventarium;
 			sourceTree = "<group>";
@@ -214,6 +224,7 @@
 				TargetAttributes = {
 					9D6307B7200FC34700D6D134 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					9D6307CD200FC34700D6D134 = {
@@ -253,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE8D6F220471BF1005D65BD /* LNNumberpad.xib in Resources */,
 				9D6307C8200FC34700D6D134 /* LaunchScreen.storyboard in Resources */,
 				9D6307C5200FC34700D6D134 /* Assets.xcassets in Resources */,
 				9D6307C3200FC34700D6D134 /* Main.storyboard in Resources */,
@@ -280,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE8D6F020471BF1005D65BD /* LNNumberpad.m in Sources */,
 				9D6307F2200FC3CC00D6D134 /* ItemsTableViewCell.swift in Sources */,
 				9DF490D22023891800288DA2 /* EditItemViewController.swift in Sources */,
 				BC79D023203DE6FF009AE26A /* checkoutItem.swift in Sources */,
@@ -442,10 +455,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Inventarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.District196.Inventarium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Inventarium/Inventarium-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -454,10 +470,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Inventarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.District196.Inventarium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Inventarium/Inventarium-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
