@@ -87,12 +87,17 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         
     }
     private func updateSaveButtonState() {
-        // Disable the Save button if the text field is empty.
         let text = itemNameInput.text ?? ""
-        let number = totalItemCountInput.text ?? ""
-        let isName = !text.isEmpty
-        let isNumber = !number.isEmpty
-        saveButton.isEnabled = isName && isNumber
+        let tNumber = totalItemCountInput.text ?? ""
+        let cNumber = currentItemCountInput.text ?? ""
+        
+        if tNumber.isEmpty || text.isEmpty || cNumber.isEmpty{
+            saveButton.isEnabled = true
+        }
+        else
+        {
+            saveButton.isEnabled = true
+        }
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
@@ -100,6 +105,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func totalStepAction(_ sender: UIStepper) {
+        totalItemCountStepper.minimumValue = Double ((item?.currentCount)!)
         item?.totalCount = Int(sender.value)
         totalItemCountInput.text = String (describing: item!.totalCount)
         
