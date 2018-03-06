@@ -22,7 +22,9 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
 
     
     var item : Item?
-    
+    var originalTotal : Int = 0
+    var originalCurrent : Int = 0
+    var originalName : String  = ""
 
     
     override func viewDidLoad() {
@@ -33,6 +35,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         itemNameInput.delegate = self
         totalItemCountInput.delegate = self
         currentItemCountInput.delegate = self
+        
 
         
         if let item = item {
@@ -47,7 +50,9 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
        
         }
 
-
+        originalName = (item?.name)!
+        originalTotal = (item?.totalCount)!
+        originalCurrent = (item?.currentCount)!
         
         // Enable the Save button only if the text field has a valid Item name.
         updateSaveButtonState()
@@ -101,12 +106,15 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func currentStepAction(_ sender: UIStepper) {
-        
+        currentItemCountStepper.maximumValue = Double ((item?.totalCount)!)
         item?.currentCount = Int(sender.value)
         currentItemCountInput.text = String (describing: item!.currentCount)
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
+        item?.currentCount = originalCurrent
+        item?.name = originalName
+        item?.totalCount = originalTotal
         dismiss(animated: true, completion: nil)
 
     }
