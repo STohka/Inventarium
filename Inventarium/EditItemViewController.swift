@@ -29,12 +29,13 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.totalItemCountInput.inputView = LNNumberpad.default()
-        self.currentItemCountInput.inputView = LNNumberpad.default()
-
+        
         itemNameInput.delegate = self
         totalItemCountInput.delegate = self
         currentItemCountInput.delegate = self
+        self.totalItemCountInput.inputView = LNNumberpad.default()
+        self.currentItemCountInput.inputView = LNNumberpad.default()
+
         
 
         
@@ -89,9 +90,8 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     private func updateSaveButtonState() {
         let text = itemNameInput.text ?? ""
         let tNumber = totalItemCountInput.text ?? ""
-        let cNumber = currentItemCountInput.text ?? ""
         
-        if tNumber.isEmpty || text.isEmpty || cNumber.isEmpty{
+        if text.isEmpty || tNumber.isEmpty{
             saveButton.isEnabled = true
         }
         else
