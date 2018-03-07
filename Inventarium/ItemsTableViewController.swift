@@ -147,7 +147,7 @@ class ItemsTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             items.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .right)
+            tableView.deleteRows(at: [indexPath], with: .left)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }

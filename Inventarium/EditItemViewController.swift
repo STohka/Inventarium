@@ -99,9 +99,18 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         {
             saveButton.isEnabled = false
         }
+        
+
+    }
+    private func updateNumberCount(){
+        let tNumber = totalItemCountInput.text ?? ""
+        let cNumber = currentItemCountInput.text ?? ""
+        currentItemCountStepper.value = Double(cNumber)!
+        totalItemCountStepper.value = Double(tNumber)!
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
+        updateNumberCount()
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -114,13 +123,15 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         totalItemCountStepper.minimumValue = Double ((item?.currentCount)!)
         item?.totalCount = Int(sender.value)
         totalItemCountInput.text = String (describing: item!.totalCount)
-        
+        updateNumberCount()
     }
     
     @IBAction func currentStepAction(_ sender: UIStepper) {
+
         currentItemCountStepper.maximumValue = Double ((item?.totalCount)!)
         item?.currentCount = Int(sender.value)
         currentItemCountInput.text = String (describing: item!.currentCount)
+        updateNumberCount()
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
