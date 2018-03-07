@@ -90,18 +90,24 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     private func updateSaveButtonState() {
         let text = itemNameInput.text ?? ""
         let tNumber = totalItemCountInput.text ?? ""
+        let cNumber = currentItemCountInput.text ?? ""
         
-        if text.isEmpty || tNumber.isEmpty{
+        if !text.isEmpty && !tNumber.isEmpty && !cNumber.isEmpty{
             saveButton.isEnabled = true
         }
         else
         {
-            saveButton.isEnabled = true
+            saveButton.isEnabled = false
         }
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
         
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Hide the keyboard.
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func totalStepAction(_ sender: UIStepper) {

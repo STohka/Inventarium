@@ -61,12 +61,12 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         let text = itemNameInput.text ?? ""
         let number = itemNumberInput.text ?? ""
 
-        if number.isEmpty || text.isEmpty{
+        if !number.isEmpty && !text.isEmpty{
         saveButton.isEnabled = true
         }
         else
         {
-            saveButton.isEnabled = true
+            saveButton.isEnabled = false
         }
     }
     
