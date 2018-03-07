@@ -17,6 +17,7 @@ class Item : Codable {
     var totalCount : Int
     
     init?(name: String, currentCount: Int, totalCount: Int) {
+        
         self.name = name
         self.currentCount = currentCount
         self.totalCount = totalCount

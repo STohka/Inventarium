@@ -21,6 +21,8 @@
 		9DE8D6F020471BF1005D65BD /* LNNumberpad.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8D6EC20471BF1005D65BD /* LNNumberpad.m */; };
 		9DE8D6F220471BF1005D65BD /* LNNumberpad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8D6EF20471BF1005D65BD /* LNNumberpad.xib */; };
 		9DF490D22023891800288DA2 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF490D12023891800288DA2 /* EditItemViewController.swift */; };
+		BC79D023203DE6FF009AE26A /* checkoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79D022203DE6FF009AE26A /* checkoutItem.swift */; };
+		BC79D025203DF17A009AE26A /* NewCheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79D024203DF17A009AE26A /* NewCheckoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		9DE8D6EE20471BF1005D65BD /* LNNumberpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LNNumberpad.h; path = LNNumberpad/LNNumberpad.h; sourceTree = SOURCE_ROOT; };
 		9DE8D6EF20471BF1005D65BD /* LNNumberpad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LNNumberpad.xib; path = LNNumberpad/LNNumberpad.xib; sourceTree = SOURCE_ROOT; };
 		9DF490D12023891800288DA2 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
+		BC79D022203DE6FF009AE26A /* checkoutItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkoutItem.swift; sourceTree = "<group>"; };
+		BC79D024203DF17A009AE26A /* NewCheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCheckoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +121,9 @@
 				9D6307ED200FC3AA00D6D134 /* HistoryTableViewController.swift */,
 				9D6307EB200FC39B00D6D134 /* ItemsTableViewController.swift */,
 				9D31C8B020111D5C00208F71 /* NewItemViewController.swift */,
+				BC79D024203DF17A009AE26A /* NewCheckoutViewController.swift */,
 				9D6307EF200FC3B700D6D134 /* Item.swift */,
+				BC79D022203DE6FF009AE26A /* checkoutItem.swift */,
 				9D6307F1200FC3CC00D6D134 /* ItemsTableViewCell.swift */,
 				9DF490D12023891800288DA2 /* EditItemViewController.swift */,
 				9DE8D6EE20471BF1005D65BD /* LNNumberpad.h */,
@@ -289,11 +295,13 @@
 				9DE8D6F020471BF1005D65BD /* LNNumberpad.m in Sources */,
 				9D6307F2200FC3CC00D6D134 /* ItemsTableViewCell.swift in Sources */,
 				9DF490D22023891800288DA2 /* EditItemViewController.swift in Sources */,
+				BC79D023203DE6FF009AE26A /* checkoutItem.swift in Sources */,
 				9D6307F0200FC3B700D6D134 /* Item.swift in Sources */,
 				9D31C8B120111D5C00208F71 /* NewItemViewController.swift in Sources */,
 				9D6307EC200FC39B00D6D134 /* ItemsTableViewController.swift in Sources */,
 				9D6307BC200FC34700D6D134 /* AppDelegate.swift in Sources */,
 				9D6307EE200FC3AA00D6D134 /* HistoryTableViewController.swift in Sources */,
+				BC79D025203DF17A009AE26A /* NewCheckoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

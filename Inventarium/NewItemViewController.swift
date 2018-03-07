@@ -21,6 +21,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         itemNameInput.delegate = self
+        itemNumberInput.delegate = self
         self.itemNumberInput.inputView = LNNumberpad.default()
 
         // Enable the Save button only if the text field has a valid Meal name.
@@ -59,14 +60,13 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         // Disable the Save button if the text field is empty.
         let text = itemNameInput.text ?? ""
         let number = itemNumberInput.text ?? ""
-        let isName = !text.isEmpty
-        let isNumber = !number.isEmpty
-        if isName == isNumber{
+
+        if number.isEmpty || text.isEmpty{
         saveButton.isEnabled = true
         }
         else
         {
-            saveButton.isEnabled = false
+            saveButton.isEnabled = true
         }
     }
     

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="28" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RSn-8n-Mya" id="Zv7-eq-kxv">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -92,7 +92,7 @@
                                 <rect key="frame" x="0.0" y="72" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xir-jN-QKP" id="mfX-eM-Gv3">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gys-vu-bA7">
@@ -142,29 +142,29 @@
                         <viewControllerLayoutGuide type="bottom" id="LAB-nD-Jwd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZpO-lz-7AI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bpg-F5-yAl">
-                                <rect key="frame" x="143" y="183" width="129" height="30"/>
+                                <rect key="frame" x="95.5" y="55" width="129" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tdo-td-Im7">
-                                <rect key="frame" x="174" y="333" width="66" height="60"/>
+                                <rect key="frame" x="127" y="205" width="66" height="60"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Number of Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auR-Id-tL4">
-                                <rect key="frame" x="125" y="268" width="165" height="21"/>
+                                <rect key="frame" x="77.5" y="139.5" width="165" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g1L-UQ-HGX">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="New Item" id="BKF-TI-M4i">
@@ -208,12 +208,12 @@
         <!--Checkout-->
         <scene sceneID="U6e-CO-pDQ">
             <objects>
-                <viewController id="nNK-Pj-peF" userLabel="Checkout" sceneMemberID="viewController">
+                <viewController id="nNK-Pj-peF" userLabel="Checkout" customClass="NewCheckoutViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nO0-db-W9Q"/>
                         <viewControllerLayoutGuide type="bottom" id="ICN-7B-DGB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eZb-iL-EXq">
+                    <view key="view" contentMode="scaleToFill" id="eZb-iL-EXq" customClass="NewChecn">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -274,10 +274,27 @@
                                 <rect key="frame" x="-43" y="464" width="370" height="201"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2M-9l-alR">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Checkout" id="3CT-dW-tWK">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eDl-7e-Rs6"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="EPh-gF-tuY"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Checkout" image="second" id="184-M8-m5s"/>
+                    <connections>
+                        <outlet property="dateField" destination="dGb-3s-UuV" id="t9S-oT-kSx"/>
+                        <outlet property="nameField" destination="4Sd-Xn-Yof" id="QkO-dv-Q0p"/>
+                        <outlet property="periodField" destination="HDZ-B1-80W" id="JAZ-x7-FCH"/>
+                        <outlet property="quantityField" destination="cVQ-Gz-vbo" id="6A4-2U-Xft"/>
+                        <outlet property="typeField" destination="dZI-g4-LHV" id="aKl-dI-7Co"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWh-3g-vUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -296,7 +313,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Number of Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFv-GV-RcX">
-                                <rect key="frame" x="303" y="202" width="162" height="21"/>
+                                <rect key="frame" x="303.5" y="202" width="161" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
