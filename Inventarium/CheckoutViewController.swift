@@ -30,13 +30,22 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate {
         
     }
     
+    func newCheckout(){
+        let nameInput = self.nameInput.text ?? ""
+        let groupInput = self.groupInput.text ?? ""
+        let quantity = quantityStepper.value
+        let returnDate = dateInput.date
+        let itemInput = self.itemInput.dataSource
+        let currentDate = Date()
+        newCheck = Checkout (name: nameInput, group: groupInput, itemType: itemInput as! Item, quantity: Int(quantity), returnDate: returnDate, currentDate: currentDate)
+    }
     
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
     }
     
     
-    var item : Checkout?
+    var newCheck : Checkout?
     
 }
 
