@@ -18,14 +18,14 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     
-
-
+    
+    
     
     var item : Item?
     var originalTotal : Int = 0
     var originalCurrent : Int = 0
     var originalName : String  = ""
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +35,9 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         currentItemCountInput.delegate = self
         self.totalItemCountInput.inputView = LNNumberpad.default()
         self.currentItemCountInput.inputView = LNNumberpad.default()
-
         
-
+        
+        
         
         if let item = item {
             navigationItem.title = item.name
@@ -48,9 +48,11 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
             currentItemCountStepper.maximumValue = Double.infinity
             totalItemCountStepper.value = Double(item.totalCount)
             currentItemCountStepper.value = Double(item.currentCount)
-       
+            totalItemCountStepper.minimumValue = Double (item.currentCount)
+            currentItemCountStepper.maximumValue = Double (item.totalCount)
+            
         }
-
+        
         originalName = (item?.name)!
         originalTotal = (item?.totalCount)!
         originalCurrent = (item?.currentCount)!
@@ -100,13 +102,16 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
             saveButton.isEnabled = false
         }
         
-
+        
     }
     private func updateNumberCount(){
         let tNumber = totalItemCountInput.text ?? ""
         let cNumber = currentItemCountInput.text ?? ""
         currentItemCountStepper.value = Double(cNumber)!
         totalItemCountStepper.value = Double(tNumber)!
+        totalItemCountStepper.minimumValue = Double (cNumber)!
+        currentItemCountStepper.maximumValue = Double (tNumber)!
+        
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
@@ -120,7 +125,6 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func totalStepAction(_ sender: UIStepper) {
-        totalItemCountStepper.minimumValue = Double ((item?.currentCount)!)
         item?.totalCount = Int(sender.value)
         totalItemCountInput.text = String (describing: item!.totalCount)
         updateNumberCount()
@@ -128,7 +132,6 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func currentStepAction(_ sender: UIStepper) {
 
-        currentItemCountStepper.maximumValue = Double ((item?.totalCount)!)
         item?.currentCount = Int(sender.value)
         currentItemCountInput.text = String (describing: item!.currentCount)
         updateNumberCount()

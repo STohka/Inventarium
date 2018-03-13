@@ -62,11 +62,11 @@ class ItemsTableViewController: UITableViewController {
     
     private func loadSampleItems() {
         
-        guard let item1 = Item(name: "Caprese Salad", currentCount: 5, totalCount : 10) else {
+        guard let item1 = Item(name: "Item Sample 1", currentCount: 5, totalCount : 10) else {
             fatalError("Unable to instantiate item1")
         }
         
-        guard let item2 = Item(name: "Caprese Salad", currentCount: 15, totalCount : 20) else {
+        guard let item2 = Item(name: "Item Sample 2", currentCount: 15, totalCount : 20) else {
             fatalError("Unable to instantiate item1")
         }
         items += [item1, item2]

@@ -38,13 +38,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="bHH-Vb-Oi9">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="3Ys-54-KAP">
                             <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="History" id="Xkj-7B-foV"/>
-                            </items>
-                        </navigationBar>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fFQ-7y-3Vf">
                                 <rect key="frame" x="0.0" y="72" width="768" height="90"/>
@@ -282,7 +280,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Checkout" id="3CT-dW-tWK">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eDl-7e-Rs6"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eDl-7e-Rs6">
+                                            <connections>
+                                                <action selector="cancel:" destination="nNK-Pj-peF" id="jgw-P4-AQl"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="EPh-gF-tuY"/>
                                     </navigationItem>
                                 </items>
@@ -297,10 +299,12 @@
                     <tabBarItem key="tabBarItem" title="Checkout" image="second" id="184-M8-m5s"/>
                     <connections>
                         <outlet property="dateInput" destination="dGb-3s-UuV" id="leo-L5-FAe"/>
+                        <outlet property="doneButton" destination="EPh-gF-tuY" id="Jrl-qA-nGy"/>
                         <outlet property="groupInput" destination="HDZ-B1-80W" id="kAs-xI-wNn"/>
                         <outlet property="itemInput" destination="dZI-g4-LHV" id="g0x-x6-d8q"/>
                         <outlet property="nameInput" destination="4Sd-Xn-Yof" id="ZDg-Sc-mvo"/>
                         <outlet property="quantityLabel" destination="cVQ-Gz-vbo" id="GZ0-15-CZx"/>
+                        <outlet property="quantityStepper" destination="p1C-ge-2Xt" id="po0-FP-Fu4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWh-3g-vUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
