@@ -24,7 +24,9 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         nameInput.delegate = self
         groupInput.delegate = self
+        
         quantityStepper.value = 0
+        quantityLabel.text = String(Int(quantityStepper.value))
         quantityStepper.minimumValue = 0
         quantityStepper.maximumValue = Double.infinity
         
@@ -40,6 +42,9 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate {
         newCheck = Checkout (name: nameInput, group: groupInput, itemType: itemInput as! Item, quantity: Int(quantity), returnDate: returnDate, currentDate: currentDate)
     }
     
+    @IBAction func quantityStepAction(_ sender: UIStepper) {
+         quantityLabel.text = String(Int(quantityStepper.value))
+    }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
     }

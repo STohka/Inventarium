@@ -267,6 +267,9 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="p1C-ge-2Xt">
                                 <rect key="frame" x="544" y="545" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="quantityStepAction:" destination="nNK-Pj-peF" eventType="valueChanged" id="buc-K3-a4V"/>
+                                </connections>
                             </stepper>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dGb-3s-UuV">
                                 <rect key="frame" x="7" y="734" width="768" height="216"/>
