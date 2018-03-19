@@ -46,7 +46,14 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate {
          quantityLabel.text = String(Int(quantityStepper.value))
     }
     
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
+    @IBAction func reset(_ sender: UIBarButtonItem) {
+        nameInput.text = ""
+        groupInput.text = ""
+        quantityStepper.value = 0
+        quantityLabel.text = String(Int(quantityStepper.value))
+        dateInput.date = Date()
+        
+        
     }
     
     

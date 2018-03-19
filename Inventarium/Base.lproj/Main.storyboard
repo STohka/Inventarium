@@ -283,9 +283,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Checkout" id="3CT-dW-tWK">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eDl-7e-Rs6">
+                                        <barButtonItem key="leftBarButtonItem" title="Reset" id="eDl-7e-Rs6">
                                             <connections>
-                                                <action selector="cancel:" destination="nNK-Pj-peF" id="jgw-P4-AQl"/>
+                                                <action selector="reset:" destination="nNK-Pj-peF" id="xaN-p4-g6W"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="EPh-gF-tuY"/>
