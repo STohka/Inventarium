@@ -24,6 +24,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     @IBOutlet weak var dateInput: UIDatePicker!
     @IBOutlet weak var quantityStepper: UIStepper!
     
+    
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -57,14 +58,14 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
          quantityLabel.text = String(Int(quantityStepper.value))
     }
     
-    @IBAction func reset(_ sender: UIBarButtonItem) {
-        nameInput.text = ""
-        groupInput.text = ""
-        quantityStepper.value = 0
-        quantityLabel.text = String(Int(quantityStepper.value))
-        dateInput.date = Date()
-        
-        
+    let currentDateTime = Date()
+    
+    
+    @IBAction func resetAll(_ sender: UIBarButtonItem) {
+        self.nameInput.text = ""
+        self.groupInput.text = ""
+        self.quantityLabel.text = "0"
+        self.dateInput.date = currentDateTime
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -97,6 +98,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         return itemList.count
     }
  
+    
     
     
     
