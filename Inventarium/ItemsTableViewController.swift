@@ -21,6 +21,7 @@ class ItemsTableViewController: UITableViewController {
         loadSampleItems()
         self.tableView.allowsSelectionDuringEditing = true
         self.tableView.allowsSelection = false
+        
 
     }
 

@@ -9,7 +9,13 @@
 import UIKit
 import os.log
 
-class CheckoutViewController: UIViewController,UITextFieldDelegate {
+class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    
+    
+    
+    var itemList = [Item]()
     
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var groupInput: UITextField!
@@ -24,12 +30,17 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         nameInput.delegate = self
         groupInput.delegate = self
+        itemInput.delegate = self
         
         quantityStepper.value = 0
         quantityLabel.text = String(Int(quantityStepper.value))
         quantityStepper.minimumValue = 0
         quantityStepper.maximumValue = Double.infinity
+        dateInput.minimumDate = Date()
         
+        let itemTVC = ItemsTableViewController(nibName: "ItemsTableViewController", bundle: nil)
+        itemList = itemTVC.items
+        itemInput.dataSource = self
     }
     
     func newCheckout(){
@@ -55,6 +66,38 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate {
         
         
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        doneButton.isEnabled = false
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Hide the keyboard.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+    }
+    
+    func pickerView(pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+        return itemList[row].name
+    }
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return itemList.count
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return itemList.count
+    }
+ 
+    
     
     
     var newCheck : Checkout?
