@@ -18,6 +18,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var dateInput: UIDatePicker!
     @IBOutlet weak var quantityStepper: UIStepper!
     
+    
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate {
         quantityStepper.minimumValue = 0
         quantityStepper.maximumValue = Double.infinity
         
+        self.dateInput.minimumDate = currentDateTime
     }
     
     func newCheckout(){
@@ -46,8 +48,16 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate {
          quantityLabel.text = String(Int(quantityStepper.value))
     }
     
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
+    let currentDateTime = Date()
+    
+    
+    @IBAction func resetAll(_ sender: UIBarButtonItem) {
+        self.nameInput.text = ""
+        self.groupInput.text = ""
+        self.quantityLabel.text = "0"
+        self.dateInput.date = currentDateTime
     }
+    
     
     
     var newCheck : Checkout?
