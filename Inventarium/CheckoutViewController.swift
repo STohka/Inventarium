@@ -13,8 +13,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     
     
     
-    
-    
+   
     var itemList = [Item]()
     
     @IBOutlet weak var nameInput: UITextField!
@@ -29,20 +28,29 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tabbar = tabBarController as! GeneralViewController
+        
         nameInput.delegate = self
         groupInput.delegate = self
         itemInput.delegate = self
+        itemInput.dataSource = self
         
         quantityStepper.value = 0
         quantityLabel.text = String(Int(quantityStepper.value))
         quantityStepper.minimumValue = 0
         quantityStepper.maximumValue = Double.infinity
         dateInput.minimumDate = Date()
+
+        itemList = tabbar.itemList
         
-        let itemTVC = ItemsTableViewController(nibName: "ItemsTableViewController", bundle: nil)
-        itemList = itemTVC.items
-        itemInput.dataSource = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let tabbar = tabBarController as! GeneralViewController
+        itemList = tabbar.itemList
+    }
+   
+    
     
     func newCheckout(){
         let nameInput = self.nameInput.text ?? ""
@@ -83,19 +91,15 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     func textFieldDidEndEditing(_ textField: UITextField) {
     }
     
-    func pickerView(pickerView: UIPickerView,
-                    titleForRow row: Int,
-                    forComponent component: Int) -> String? {
-        return itemList[row].name
-    }
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return itemList.count
-    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return itemList.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return (itemList[row].name)
     }
  
     

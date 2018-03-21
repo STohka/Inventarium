@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--General View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="GeneralViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -33,7 +33,7 @@
         <!--History-->
         <scene sceneID="bYJ-WJ-48Q">
             <objects>
-                <tableViewController id="ryS-K3-oyS" userLabel="History" sceneMemberID="viewController">
+                <tableViewController id="ryS-K3-oyS" userLabel="History" customClass="HistoryTableViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="AOy-HL-7dO">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,7 +285,7 @@
                                     <navigationItem title="Checkout" id="3CT-dW-tWK">
                                         <barButtonItem key="leftBarButtonItem" title="Reset" id="eDl-7e-Rs6">
                                             <connections>
-                                                <action selector="resetAll:" destination="nNK-Pj-peF" id="a4F-Jb-RZv"/>
+                                                <action selector="reset:" destination="nNK-Pj-peF" id="nOn-GX-yNL"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="EPh-gF-tuY"/>
