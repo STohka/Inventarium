@@ -122,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				9D6307BB200FC34700D6D134 /* AppDelegate.swift */,
+				9D6071BB2062C28A0049D9AF /* GeneralViewController.swift */,
 				9D6307EF200FC3B700D6D134 /* Item.swift */,
 				9D6307EB200FC39B00D6D134 /* ItemsTableViewController.swift */,
 				9D6307F1200FC3CC00D6D134 /* ItemsTableViewCell.swift */,
@@ -130,7 +131,6 @@
 				9D6307ED200FC3AA00D6D134 /* HistoryTableViewController.swift */,
 				C23CBBF62057AA1E00353FF8 /* HistoryTableViewCell.swift */,
 				BC79D024203DF17A009AE26A /* CheckoutViewController.swift */,
-				9D6071BB2062C28A0049D9AF /* GeneralViewController.swift */,
 				BC79D022203DE6FF009AE26A /* Checkout.swift */,
 				9DE8D6EE20471BF1005D65BD /* LNNumberpad.h */,
 				9DE8D6EC20471BF1005D65BD /* LNNumberpad.m */,
