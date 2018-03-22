@@ -28,6 +28,11 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let tabbar = tabBarController as! GeneralViewController
         
         nameInput.delegate = self
@@ -40,13 +45,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         quantityStepper.minimumValue = 0
         quantityStepper.maximumValue = Double.infinity
         dateInput.minimumDate = Date()
-
-        itemList = tabbar.itemList
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        let tabbar = tabBarController as! GeneralViewController
         itemList = tabbar.itemList
     }
    
