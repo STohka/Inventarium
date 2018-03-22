@@ -2,13 +2,15 @@
 //  GeneralViewController.swift
 //  Inventarium
 //
-//  Created by LIU, CHI-YUN on 3/14/18.
+//  Created by LIU, CHI-YUN on 3/21/18.
 //  Copyright © 2018 LIU, CHI-YUN. All rights reserved.
 //
 
 import UIKit
 
 class GeneralViewController: UITabBarController {
+    
+    var itemList = [Item]()
 
     override func viewDidLoad() {
         super.viewDidLoad()

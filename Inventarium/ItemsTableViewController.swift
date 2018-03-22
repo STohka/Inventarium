@@ -14,7 +14,8 @@ class ItemsTableViewController: UITableViewController {
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var addItem: UIBarButtonItem!
     
-      var items = [Item]()
+    var items = [Item]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,8 +126,26 @@ class ItemsTableViewController: UITableViewController {
     
     
     
-  
+    override func viewWillAppear(_ animated: Bool) {
+        let tabbar = tabBarController as! GeneralViewController
+        tabbar.itemList = items
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+         let tabbar = tabBarController as! GeneralViewController
+        tabbar.itemList = items
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let tabbar = tabBarController as! GeneralViewController
+        tabbar.itemList = items
+    }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        let tabbar = tabBarController as! GeneralViewController
+        tabbar.itemList = items
+    }
 
 
 
