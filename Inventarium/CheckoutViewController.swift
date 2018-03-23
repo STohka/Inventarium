@@ -15,6 +15,8 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     
    
     var itemList = [Item]()
+    var checkouts = [Checkout]()
+    var itemName :String = ""
     
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var groupInput: UITextField!
@@ -22,15 +24,14 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var dateInput: UIDatePicker!
     @IBOutlet weak var quantityStepper: UIStepper!
-    
-    
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateDoneButton()
     }
     
+    //loading & initiates object value
     override func viewDidAppear(_ animated: Bool) {
         let tabbar = tabBarController as! GeneralViewController
         
@@ -46,23 +47,19 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         dateInput.minimumDate = Date()
         
         itemList = tabbar.itemList
+        
+        updateDoneButton()
     }
    
     
     
-    func newCheckout(){
-        let nameInput = self.nameInput.text ?? ""
-        let groupInput = self.groupInput.text ?? ""
-        let quantity = quantityStepper.value
-        let returnDate = dateInput.date
-        let itemInput = self.itemInput.dataSource
-        let currentDate = Date()
-        newCheck = Checkout (name: nameInput, group: groupInput, itemType: itemInput as! Item, quantity: Int(quantity), returnDate: returnDate, currentDate: currentDate)
-    }
     
     @IBAction func quantityStepAction(_ sender: UIStepper) {
          quantityLabel.text = String(Int(quantityStepper.value))
+        updateDoneButton()
     }
+    
+    
     
     @IBAction func reset(_ sender: UIBarButtonItem) {
         nameInput.text = ""
@@ -73,13 +70,30 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         
         
     }
+    //button action functions
+    @IBAction func done(_ sender: UIBarButtonItem) {
+        let nameInput = self.nameInput.text ?? ""
+        let groupInput = self.groupInput.text ?? ""
+        let quantity = quantityStepper.value
+        let returnDate = dateInput.date
+        let itemSelected = itemName
+        let currentDate = Date()
+        newCheck = Checkout (name: nameInput, group: groupInput, itemType: itemSelected, quantity: Int(quantity), returnDate: returnDate, currentDate: currentDate)
+        checkouts.append(newCheck!)
+        
+        //reset after new checkout is made
+        reset(doneButton)
+        
+    }
     
+    
+    //text field functions
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // Disable the Save button while editing.
         doneButton.isEnabled = false
         
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
         textField.resignFirstResponder()
@@ -87,8 +101,11 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        updateDoneButton()
     }
     
+    
+    //picker functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -97,9 +114,29 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         return itemList.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        itemName = itemList[row].name
         return (itemList[row].name)
+    
+    }
+    //get selected value
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
+    
+    //button state
+    func updateDoneButton(){
+        let name = nameInput.text ?? ""
+        let group = groupInput.text ?? ""
+        if !name.isEmpty && !group.isEmpty && (quantityStepper.value > 0){
+            doneButton.isEnabled = true
+        }
+        else {
+            doneButton.isEnabled = false
+        }
+        
     }
  
+    
     
     
     

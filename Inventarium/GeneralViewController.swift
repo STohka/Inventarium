@@ -6,12 +6,14 @@
 //  Copyright © 2018 LIU, CHI-YUN. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import os.log
 
-class GeneralViewController: UITabBarController {
+class GeneralViewController: UITabBarController{
     
     var itemList = [Item]()
-
+    var checkList = [Item]()
     override func viewDidLoad() {
         super.viewDidLoad()
 

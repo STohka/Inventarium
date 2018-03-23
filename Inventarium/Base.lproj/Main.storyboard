@@ -288,7 +288,11 @@
                                                 <action selector="reset:" destination="nNK-Pj-peF" id="nOn-GX-yNL"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="EPh-gF-tuY"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="EPh-gF-tuY">
+                                            <connections>
+                                                <action selector="done:" destination="nNK-Pj-peF" id="uNx-5P-LrP"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

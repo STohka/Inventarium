@@ -14,12 +14,12 @@ class Checkout : Codable{
     
     var name : String
     var group : String
-    var itemType : Item
+    var itemType : String
     var quantity : Int
     var returnDate : Date
     var currentDate :Date
     
-    init?(name: String, group: String, itemType: Item, quantity: Int, returnDate: Date, currentDate: Date) {
+    init?(name: String, group: String, itemType: String, quantity: Int, returnDate: Date, currentDate: Date) {
         
         self.name = name
         self.group = group
