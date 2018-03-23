@@ -51,7 +51,7 @@ class HistoryTableViewController: UITableViewController {
         
         let historyItem = checkouts[indexPath.row]
         cell.NameLabel.text = historyItem.name
-        cell.itemNameLabel.text = historyItem.itemType.name
+        cell.itemNameLabel.text = historyItem.itemType
         cell.itemQuantityLabel.text = String(historyItem.quantity)
         cell.dateBorrowedLabel.text = String(describing: historyItem.currentDate)
         cell.groupLabel.text = historyItem.group
@@ -62,12 +62,12 @@ class HistoryTableViewController: UITableViewController {
     
     private func loadSampleItem() {
         
-        guard let history1 = Checkout(name: "Kevin", group: "MAD", itemType: item1!, quantity: 2, returnDate: curDate, currentDate: curDate) else {fatalError("Unable to instantiate item1")
+        guard let history1 = Checkout(name: "Kevin", group: "MAD", itemType: (item1?.name)!, quantity: 2, returnDate: curDate, currentDate: curDate) else {fatalError("Unable to instantiate item1")
             }
         
         
         
-        guard let history2 = Checkout(name: "Chi", group: "MAD", itemType: item2!, quantity: 3, returnDate: curDate, currentDate: curDate) else {
+        guard let history2 = Checkout(name: "Chi", group: "MAD", itemType: (item2?.name)!, quantity: 3, returnDate: curDate, currentDate: curDate) else {
             fatalError("Unable to instantiate item1")
        }
         
