@@ -17,7 +17,7 @@ class Checkout : Codable{
     var itemType : String
     var quantity : Int
     var returnDate : Date
-    var currentDate :Date
+    var currentDate : Date
     
     init?(name: String, group: String, itemType: String, quantity: Int, returnDate: Date, currentDate: Date) {
         
