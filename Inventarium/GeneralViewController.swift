@@ -13,7 +13,7 @@ import os.log
 class GeneralViewController: UITabBarController{
     
     var itemList = [Item]()
-    var checkList = [Item]()
+    var checkList = [Checkout]() 
     override func viewDidLoad() {
         super.viewDidLoad() 
 

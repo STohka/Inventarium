@@ -126,16 +126,6 @@ class ItemsTableViewController: UITableViewController {
     
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        let tabbar = tabBarController as! GeneralViewController
-        tabbar.itemList = items
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-         let tabbar = tabBarController as! GeneralViewController
-        tabbar.itemList = items
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         let tabbar = tabBarController as! GeneralViewController

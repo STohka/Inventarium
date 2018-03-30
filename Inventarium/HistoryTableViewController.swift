@@ -14,13 +14,15 @@ class HistoryTableViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var checkouts = [Checkout]()
-    let item1 = Item(name: "Pen", currentCount: 5, totalCount : 10)
-    let item2 = Item(name: "Pencil", currentCount: 5, totalCount : 10)
+
     let curDate = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleItem()
+        let tabbar = tabBarController as! GeneralViewController
+        
+        checkouts = tabbar.checkList
+         self.tableView.allowsSelection = false
       
     }
 
@@ -58,22 +60,6 @@ class HistoryTableViewController: UITableViewController {
         cell.returnLabel.text = String(describing: historyItem.returnDate)
         
         return cell
-    }
-    
-    private func loadSampleItem() {
-        
-        guard let history1 = Checkout(name: "Kevin", group: "MAD", itemType: (item1?.name)!, quantity: 2, returnDate: curDate, currentDate: curDate) else {fatalError("Unable to instantiate item1")
-            }
-        
-        
-        
-        guard let history2 = Checkout(name: "Chi", group: "MAD", itemType: (item2?.name)!, quantity: 3, returnDate: curDate, currentDate: curDate) else {
-            fatalError("Unable to instantiate item1")
-       }
-        
-        checkouts += [history1, history2]
-        
-        
     }
     
 }
