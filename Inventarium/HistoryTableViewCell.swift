@@ -15,7 +15,7 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var itemQuantityLabel: UILabel!
     @IBOutlet weak var dateBorrowedLabel: UILabel!
     @IBOutlet weak var groupLabel: UILabel!
-    @IBOutlet weak var returnLabel: UILabel!
+    @IBOutlet weak var quantityTag: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

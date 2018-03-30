@@ -20,10 +20,15 @@ class HistoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let tabbar = tabBarController as! GeneralViewController
-        
         checkouts = tabbar.checkList
          self.tableView.allowsSelection = false
       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let tabbar = tabBarController as! GeneralViewController
+        checkouts = tabbar.checkList
+       tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,7 +62,7 @@ class HistoryTableViewController: UITableViewController {
         cell.itemQuantityLabel.text = String(historyItem.quantity)
         cell.dateBorrowedLabel.text = String(describing: historyItem.currentDate)
         cell.groupLabel.text = historyItem.group
-        cell.returnLabel.text = String(describing: historyItem.returnDate)
+        cell.quantityTag.text = "Quantity"
         
         return cell
     }

@@ -89,7 +89,6 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         let itemSelected = itemName
         let currentDate = Date()
         newCheck = Checkout (name: nameInput, group: groupInput, itemType: itemSelected, quantity: Int(quantity), returnDate: returnDate, currentDate: currentDate)
-        checkouts.append(newCheck!)
         tabbar.checkList.append(newCheck!)
         
         print(tabbar.checkList)
