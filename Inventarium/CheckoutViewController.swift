@@ -14,9 +14,10 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     
     
    
-    var itemList = [Item]()
+    var itemListCopy = [Item]()
     var checkouts = [Checkout]()
     var itemName :String = ""
+    var itemIndex : Int  = 0
     
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var groupInput: UITextField!
@@ -39,7 +40,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         groupInput.delegate = self
         itemInput.delegate = self
         itemInput.dataSource = self
-        itemList = tabbar.itemList
+        itemListCopy = tabbar.itemList
         
         nameInput.text = ""
         groupInput.text = ""
@@ -56,7 +57,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     
     override func viewDidDisappear(_ animated: Bool) {
         let tabbar = tabBarController as! GeneralViewController
-        tabbar.itemList = itemList
+        tabbar.itemList = itemListCopy
     }
    
     
@@ -81,7 +82,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     //button action functions
     @IBAction func done(_ sender: UIBarButtonItem) {
         let tabbar = tabBarController as! GeneralViewController
-        tabbar.itemList = itemList
+        tabbar.itemList = itemListCopy
         let nameInput = self.nameInput.text ?? ""
         let groupInput = self.groupInput.text ?? ""
         let quantity = quantityStepper.value
@@ -91,7 +92,11 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         newCheck = Checkout (name: nameInput, group: groupInput, itemType: itemSelected, quantity: Int(quantity), returnDate: returnDate, currentDate: currentDate)
         tabbar.checkList.append(newCheck!)
         
-        print(tabbar.checkList)
+        tabbar.itemList[itemIndex].currentCount = itemListCopy[itemIndex].currentCount - Int(quantityStepper.value)
+        
+        tabbar.itemList = itemListCopy
+        
+        print(tabbar.itemList[itemIndex].currentCount)
         //reset after new checkout is made
         reset(doneButton)
         
@@ -122,13 +127,13 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return itemList.count
+        return itemListCopy.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        itemName = itemList[row].name
-        quantityStepper.maximumValue = Double(itemList[row].currentCount)
-        itemList[row].currentCount = itemList[row].currentCount - Int(quantityStepper.value)
-        return (itemList[row].name)
+        itemName = itemListCopy[row].name
+        quantityStepper.maximumValue = Double(itemListCopy[row].currentCount)
+        itemIndex = row
+        return (itemListCopy[row].name)
     
     }
     //get selected value
