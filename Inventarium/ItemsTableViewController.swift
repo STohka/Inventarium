@@ -130,7 +130,7 @@ class ItemsTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         let tabbar = tabBarController as! GeneralViewController
         
-        items = tabbar.itemList
+        tabbar.itemList = items
         reloadInputViews()
     }
 
