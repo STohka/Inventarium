@@ -14,12 +14,17 @@ class ItemsTableViewController: UITableViewController {
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var addItem: UIBarButtonItem!
     
+   
+    
+    //sample items
+    //var item1 = Item(name: "Item Sample 1", currentCount: 5, totalCount : 10)
+    //var item2 = Item(name: "Item Sample 2", currentCount: 15, totalCount : 20)
+    
     var items = [Item]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleItems()
         self.tableView.allowsSelectionDuringEditing = true
         self.tableView.allowsSelection = false
         
@@ -62,18 +67,7 @@ class ItemsTableViewController: UITableViewController {
     
 
     
-    private func loadSampleItems() {
-        
-        guard let item1 = Item(name: "Item Sample 1", currentCount: 5, totalCount : 10) else {
-            fatalError("Unable to instantiate item1")
-        }
-        
-        guard let item2 = Item(name: "Item Sample 2", currentCount: 15, totalCount : 20) else {
-            fatalError("Unable to instantiate item1")
-        }
-        items += [item1, item2]
-        
-    }
+
     
     //Actions
     @IBAction func unwindToItemList(sender: UIStoryboardSegue) {
