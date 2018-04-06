@@ -124,8 +124,8 @@ class ItemsTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         let tabbar = tabBarController as! GeneralViewController
         
-        tabbar.itemList = items
-        reloadInputViews()
+        items = tabbar.itemList
+        tableView.reloadData()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
