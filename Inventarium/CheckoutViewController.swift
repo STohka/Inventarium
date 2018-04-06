@@ -130,16 +130,20 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         return itemListCopy.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        itemName = itemListCopy[row].name
-        quantityStepper.maximumValue = Double(itemListCopy[row].currentCount)
         itemIndex = row
+        itemName = itemListCopy[row].name
+        quantityStepper.value = 0
+        quantityLabel.text = String(Int(quantityStepper.value))
         return (itemListCopy[row].name)
     
     }
-    //get selected value
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        quantityStepper.maximumValue = Double(itemListCopy[row].currentCount)
     }
+    //get selected value
+    //func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    //}
     
     //button state
     func updateDoneButton(){
