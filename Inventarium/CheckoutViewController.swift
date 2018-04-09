@@ -132,6 +132,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         itemIndex = row
         itemName = itemListCopy[row].name
+         quantityStepper.maximumValue = Double(itemListCopy[row].currentCount)
         quantityStepper.value = 0
         quantityLabel.text = String(Int(quantityStepper.value))
         return (itemListCopy[row].name)
