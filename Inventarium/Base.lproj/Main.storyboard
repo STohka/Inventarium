@@ -39,16 +39,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="UaT-v3-LdD">
-                            <rect key="frame" x="0.0" y="0.0" width="768" height="28"/>
+                            <rect key="frame" x="0.0" y="0.0" width="768" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
+                                <segment title="Name"/>
+                                <segment title="Group"/>
+                                <segment title="Item"/>
+                                <segment title="Borrowed Date"/>
+                                <segment title="Return Date"/>
                             </segments>
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryTableViewCell" id="fFQ-7y-3Vf" customClass="HistoryTableViewCell" customModule="Inventarium" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="768" height="90"/>
+                                <rect key="frame" x="0.0" y="58" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fFQ-7y-3Vf" id="fWs-QD-yqz">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="89.5"/>
@@ -105,6 +108,7 @@
                                     <outlet property="itemNameLabel" destination="lHS-Dm-2pi" id="2WF-tK-c4P"/>
                                     <outlet property="itemQuantityLabel" destination="BiK-0w-iTv" id="C0r-ug-Pds"/>
                                     <outlet property="quantityTag" destination="ueA-VC-dyb" id="Uau-d4-8ZA"/>
+                                    <segue destination="BFz-gp-fiD" kind="show" id="fSb-gw-w8T"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -114,21 +118,28 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="history" id="fCf-bS-OZt"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="hhm-py-TUL" id="Hvc-RU-a1D"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VT8-iQ-rw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="hhm-py-TUL">
-                    <connections>
-                        <outlet property="delegate" destination="ryS-K3-oyS" id="5ul-IU-Tvj"/>
-                        <outlet property="searchContentsController" destination="ryS-K3-oyS" id="y8V-Kd-GI8"/>
-                        <outlet property="searchResultsDataSource" destination="ryS-K3-oyS" id="NSy-NY-36w"/>
-                        <outlet property="searchResultsDelegate" destination="ryS-K3-oyS" id="nOv-J4-J9z"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="789.84375" y="-493.35937499999994"/>
+        </scene>
+        <!--Checkout Detail View Controller-->
+        <scene sceneID="QCR-vb-Tlm">
+            <objects>
+                <viewController id="BFz-gp-fiD" customClass="CheckoutDetailViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vgp-ry-6uv"/>
+                        <viewControllerLayoutGuide type="bottom" id="hvr-1W-5dr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Et-B5-w3A">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ncK-cu-bX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1617" y="-493"/>
         </scene>
         <!--Items-->
         <scene sceneID="yBn-6Q-FM3">

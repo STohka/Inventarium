@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D31C8B120111D5C00208F71 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D31C8B020111D5C00208F71 /* NewItemViewController.swift */; };
+		9D43B4F3207BD1F000B1C45F /* CheckoutDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D43B4F2207BD1F000B1C45F /* CheckoutDetailViewController.swift */; };
 		9D6071BC2062C28A0049D9AF /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6071BB2062C28A0049D9AF /* GeneralViewController.swift */; };
 		9D6307BC200FC34700D6D134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6307BB200FC34700D6D134 /* AppDelegate.swift */; };
 		9D6307C3200FC34700D6D134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6307C1200FC34700D6D134 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		9D31C8B020111D5C00208F71 /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		9D43B4F2207BD1F000B1C45F /* CheckoutDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutDetailViewController.swift; sourceTree = "<group>"; };
 		9D6071BB2062C28A0049D9AF /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		9D6307B8200FC34700D6D134 /* Inventarium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inventarium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6307BB200FC34700D6D134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				C23CBBF62057AA1E00353FF8 /* HistoryTableViewCell.swift */,
 				BC79D024203DF17A009AE26A /* CheckoutViewController.swift */,
 				BC79D022203DE6FF009AE26A /* Checkout.swift */,
+				9D43B4F2207BD1F000B1C45F /* CheckoutDetailViewController.swift */,
 				9DE8D6EE20471BF1005D65BD /* LNNumberpad.h */,
 				9DE8D6EC20471BF1005D65BD /* LNNumberpad.m */,
 				9DE8D6EF20471BF1005D65BD /* LNNumberpad.xib */,
@@ -305,6 +308,7 @@
 				BC79D023203DE6FF009AE26A /* Checkout.swift in Sources */,
 				9D6307F0200FC3B700D6D134 /* Item.swift in Sources */,
 				9D31C8B120111D5C00208F71 /* NewItemViewController.swift in Sources */,
+				9D43B4F3207BD1F000B1C45F /* CheckoutDetailViewController.swift in Sources */,
 				9D6307EC200FC39B00D6D134 /* ItemsTableViewController.swift in Sources */,
 				9D6307BC200FC34700D6D134 /* AppDelegate.swift in Sources */,
 				C23CBBF72057AA1E00353FF8 /* HistoryTableViewCell.swift in Sources */,
