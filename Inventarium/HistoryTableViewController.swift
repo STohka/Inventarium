@@ -11,7 +11,6 @@ import os.log
 
 class HistoryTableViewController: UITableViewController {
     
-    @IBOutlet weak var searchBar: UISearchBar!
     
     var checkouts = [Checkout]()
 
@@ -66,5 +65,31 @@ class HistoryTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toCheckDetail"{
+            
+            super.prepare(for: segue, sender: sender)
+            guard let itemDetailViewController = segue.destination as? CheckoutDetailViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedItemCell = sender as? HistoryTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedItemCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedItem = checkouts[indexPath.row]
+            itemDetailViewController.checkout = selectedItem
+        }
+        
+    }
+    
+    
+
     
 }

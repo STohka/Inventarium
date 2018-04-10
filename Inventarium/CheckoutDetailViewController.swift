@@ -9,27 +9,39 @@
 import UIKit
 
 class CheckoutDetailViewController: UIViewController {
+    
+    var checkout : Checkout?
+    
+    @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var GroupLabel: UILabel!
+    @IBOutlet weak var ItemLabel: UILabel!
+    @IBOutlet weak var QuantityLabel: UILabel!
+    @IBOutlet weak var BDateLabel: UILabel!
+    @IBOutlet weak var RDateLabel: UILabel!
+    @IBAction func ReturnAll(_ sender: Any) {
+    }
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let checkout = checkout {
+            NameLabel.text = checkout.name
+            GroupLabel.text = checkout.group
+            ItemLabel.text = checkout.itemType
+            QuantityLabel.text = String(checkout.quantity)
+            BDateLabel.text = ""
+            RDateLabel.text = ""
+            
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

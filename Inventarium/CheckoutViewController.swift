@@ -87,7 +87,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         let groupInput = self.groupInput.text ?? ""
         let quantity = quantityStepper.value
         let returnDate = dateInput.date
-        let itemSelected = itemName
+        let itemSelected = itemListCopy[itemIndex].name
         let currentDate = Date()
         newCheck = Checkout (name: nameInput, group: groupInput, itemType: itemSelected, quantity: Int(quantity), returnDate: returnDate, currentDate: currentDate)
         tabbar.checkList.append(newCheck!)
@@ -130,7 +130,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         return itemListCopy.count
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        itemIndex = row
+        
         itemName = itemListCopy[row].name
          quantityStepper.maximumValue = Double(itemListCopy[row].currentCount)
         quantityStepper.value = 0
@@ -139,12 +139,9 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        itemIndex = row
         quantityStepper.maximumValue = Double(itemListCopy[row].currentCount)
     }
-    //get selected value
-    //func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-    //}
     
     //button state
     func updateDoneButton(){
