@@ -18,8 +18,9 @@ class Checkout : Codable{
     var quantity : Int
     var returnDate : Date
     var currentDate : Date
+    var itemIndex : Int
     
-    init?(name: String, group: String, itemType: String, quantity: Int, returnDate: Date, currentDate: Date) {
+    init?(name: String, group: String, itemType: String, quantity: Int, returnDate: Date, currentDate: Date, itemIndex: Int) {
         
         self.name = name
         self.group = group
@@ -27,6 +28,7 @@ class Checkout : Codable{
         self.quantity = quantity
         self.currentDate = currentDate
         self.returnDate = returnDate
+        self.itemIndex = itemIndex
     }
     /**
      * Archive this CheckoutClass object

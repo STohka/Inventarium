@@ -18,19 +18,19 @@ class CheckoutDetailViewController: UIViewController {
     @IBOutlet weak var QuantityLabel: UILabel!
     @IBOutlet weak var BDateLabel: UILabel!
     @IBOutlet weak var RDateLabel: UILabel!
-    @IBAction func ReturnAll(_ sender: Any) {
+    @IBAction func returnAll(_ sender: Any) {
     }
-
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let checkout = checkout {
-            NameLabel.text = checkout.name
-            GroupLabel.text = checkout.group
-            ItemLabel.text = checkout.itemType
-            QuantityLabel.text = String(checkout.quantity)
+            NameLabel.text = "Name : " + checkout.name
+            GroupLabel.text = "Group : " + checkout.group
+            ItemLabel.text = "Borrowed Item : " + checkout.itemType
+            QuantityLabel.text = "Quantity : " + String(checkout.quantity)
             BDateLabel.text = ""
             RDateLabel.text = ""
             

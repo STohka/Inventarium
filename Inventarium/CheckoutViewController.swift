@@ -89,14 +89,13 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         let returnDate = dateInput.date
         let itemSelected = itemListCopy[itemIndex].name
         let currentDate = Date()
-        newCheck = Checkout (name: nameInput, group: groupInput, itemType: itemSelected, quantity: Int(quantity), returnDate: returnDate, currentDate: currentDate)
-        tabbar.checkList.append(newCheck!)
+        newCheck = Checkout (name: nameInput, group: groupInput, itemType: itemSelected, quantity: Int(quantity), returnDate: returnDate, currentDate: currentDate, itemIndex : itemIndex)
+        tabbar.checkList.insert((newCheck!), at: 0)
         
         tabbar.itemList[itemIndex].currentCount = itemListCopy[itemIndex].currentCount - Int(quantityStepper.value)
         
         tabbar.itemList = itemListCopy
         
-        print(tabbar.itemList[itemIndex].currentCount)
         //reset after new checkout is made
         reset(doneButton)
         

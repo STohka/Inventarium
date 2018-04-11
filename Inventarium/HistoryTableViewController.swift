@@ -20,7 +20,7 @@ class HistoryTableViewController: UITableViewController {
         super.viewDidLoad()
         let tabbar = tabBarController as! GeneralViewController
         checkouts = tabbar.checkList
-         self.tableView.allowsSelection = false
+         self.tableView.allowsSelection = true
       
     }
     
@@ -89,7 +89,15 @@ class HistoryTableViewController: UITableViewController {
         
     }
     
+    @IBAction func unwindToCheckoutList(sender: UIStoryboardSegue) {
+        }
+    
+   
+        
+        
+    }
+    
     
 
     
-}
+
