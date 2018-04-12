@@ -11,6 +11,7 @@ import UIKit
 class CheckoutDetailViewController: UIViewController {
     
     var checkout : Checkout?
+    var checkoutIndex : Int = 0
     
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var GroupLabel: UILabel!
@@ -18,8 +19,7 @@ class CheckoutDetailViewController: UIViewController {
     @IBOutlet weak var QuantityLabel: UILabel!
     @IBOutlet weak var BDateLabel: UILabel!
     @IBOutlet weak var RDateLabel: UILabel!
-    @IBAction func returnAll(_ sender: Any) {
-    }
+
     
     
 

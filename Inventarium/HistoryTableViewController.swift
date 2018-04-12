@@ -13,7 +13,7 @@ class HistoryTableViewController: UITableViewController {
     
     
     var checkouts = [Checkout]()
-
+    var checkIndex : Int = 0
     let curDate = Date()
     
     override func viewDidLoad() {
@@ -85,6 +85,7 @@ class HistoryTableViewController: UITableViewController {
             
             let selectedItem = checkouts[indexPath.row]
             itemDetailViewController.checkout = selectedItem
+            checkIndex = indexPath.row
         }
         
     }
@@ -92,7 +93,19 @@ class HistoryTableViewController: UITableViewController {
     @IBAction func unwindToCheckoutList(sender: UIStoryboardSegue) {
         }
     
-   
+    @IBAction func unwindToCheckoutReturn(sender: UIStoryboardSegue) {
+         let tabbar = tabBarController as! GeneralViewController
+        if let sourceViewController = sender.source as? CheckoutDetailViewController,
+            let item = sourceViewController.checkout {
+            
+            let curCount  = tabbar.itemList[(item.itemIndex)].currentCount
+            tabbar.itemList[(item.itemIndex)].currentCount = curCount + item.quantity
+            checkouts.remove(at: checkIndex)
+            tableView.reloadData()
+            tabbar.checkList = checkouts
+            
+        }
+    }
         
         
     }
