@@ -20,8 +20,6 @@ class CheckoutDetailViewController: UIViewController {
     @IBOutlet weak var BDateLabel: UILabel!
     @IBOutlet weak var RDateLabel: UILabel!
 
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +29,8 @@ class CheckoutDetailViewController: UIViewController {
             GroupLabel.text = "Group : " + checkout.group
             ItemLabel.text = "Borrowed Item : " + checkout.itemType
             QuantityLabel.text = "Quantity : " + String(checkout.quantity)
-            BDateLabel.text = ""
-            RDateLabel.text = ""
+            BDateLabel.text = "Borrowed Date : "
+            RDateLabel.text = "Date need to be returned : "
             
             
         }
