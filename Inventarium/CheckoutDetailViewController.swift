@@ -12,6 +12,7 @@ class CheckoutDetailViewController: UIViewController {
     
     var checkout : Checkout?
     var checkoutIndex : Int = 0
+    var returnCount : Int = 0
     
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var GroupLabel: UILabel!
@@ -19,7 +20,9 @@ class CheckoutDetailViewController: UIViewController {
     @IBOutlet weak var QuantityLabel: UILabel!
     @IBOutlet weak var BDateLabel: UILabel!
     @IBOutlet weak var RDateLabel: UILabel!
-
+    @IBOutlet weak var ReturnCountStepper: UIStepper!
+    @IBOutlet weak var ReturnCountLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +34,22 @@ class CheckoutDetailViewController: UIViewController {
             QuantityLabel.text = "Quantity : " + String(checkout.quantity)
             BDateLabel.text = "Borrowed Date : "
             RDateLabel.text = "Date need to be returned : "
-            
-            
+            ReturnCountStepper.maximumValue = Double(checkout.quantity)
+            ReturnCountStepper.value = 1
+            ReturnCountLabel.text = String(Int(ReturnCountStepper.value))
+            ReturnCountStepper.minimumValue = 1
+            returnCount = 1
         }
+        
+        
     }
+ 
 
+    @IBAction func ReturnCountAction(_ sender: UIStepper) {
+        ReturnCountLabel.text = String(Int(ReturnCountStepper.value))
+        returnCount = Int(ReturnCountStepper.value)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

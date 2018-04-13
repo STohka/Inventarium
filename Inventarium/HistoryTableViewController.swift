@@ -106,11 +106,30 @@ class HistoryTableViewController: UITableViewController {
             
         }
     }
-        
-        
+    @IBAction func unwindToCheckoutReCount(sender: UIStoryboardSegue) {
+            let tabbar = tabBarController as! GeneralViewController
+            if let sourceViewController = sender.source as? CheckoutDetailViewController,
+                let item = sourceViewController.checkout {
+                 
+                let curCount  = tabbar.itemList[(item.itemIndex)].currentCount
+                tabbar.itemList[(item.itemIndex)].currentCount = curCount + sourceViewController.returnCount
+                checkouts[checkIndex].quantity = checkouts[checkIndex].quantity - sourceViewController.returnCount
+                
+                if (item.quantity == 0)
+                {
+                    checkouts.remove(at: checkIndex)
+                }
+                
+                tableView.reloadData()
+                tabbar.checkList = checkouts
+                
+            }
     }
+        
+        
+}
     
-    
+
 
     
 
