@@ -51,7 +51,7 @@ class Inventorium: Codable {
         let archiveURL = documentsDirectory.appendingPathComponent(fileName)
         if let recoveredDataCoded = NSKeyedUnarchiver.unarchiveObject(withFile: archiveURL.path) as? Data {
             do {
-                // *** Replace "MeetClass" on the next line with the name of the class to be persistent. ***
+                // *** Replace "Inventorium" on the next line with the name of the class to be persistent. ***
                 let recoveredData = try PropertyListDecoder().decode(Inventorium.self, from: recoveredDataCoded)
                 os_log("Data successfully recovered from file.", log: OSLog.default, type: .debug)
                 // *** Replace all the assignment statements BELOW to "restore" all properties of the object ***

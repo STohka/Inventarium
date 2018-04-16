@@ -104,6 +104,11 @@ class HistoryTableViewController: UITableViewController {
             tableView.reloadData()
             tabbar.checkList = checkouts
             
+            //persistent data functions
+            tabbar.totalData?.CheckListData = checkouts
+            tabbar.totalData?.ItemListData = tabbar.itemList
+            tabbar.totalData?.archive(fileName: "saved")
+            
         }
     }
     @IBAction func unwindToCheckoutReCount(sender: UIStoryboardSegue) {
@@ -123,8 +128,15 @@ class HistoryTableViewController: UITableViewController {
                 tableView.reloadData()
                 tabbar.checkList = checkouts
                 
+                //persistent data functions
+                tabbar.totalData?.CheckListData = checkouts
+                tabbar.totalData?.ItemListData = tabbar.itemList
+                tabbar.totalData?.archive(fileName: "saved")
+                
             }
     }
+    
+    
         
         
 }

@@ -35,7 +35,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     //loading & initiates object value
     override func viewDidAppear(_ animated: Bool) {
         let tabbar = tabBarController as! GeneralViewController
-        
+        tabbar.totalData?.restore(fileName: "saved")
         nameInput.delegate = self
         groupInput.delegate = self
         itemInput.delegate = self
@@ -49,15 +49,18 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         quantityStepper.minimumValue = 0
         quantityStepper.maximumValue = Double.infinity
         dateInput.minimumDate = Date()
-        
-       
-        
+
         updateDoneButton()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         let tabbar = tabBarController as! GeneralViewController
         tabbar.itemList = itemListCopy
+        
+        //persistent data functions
+        tabbar.totalData?.CheckListData = tabbar.checkList
+        tabbar.totalData?.ItemListData = tabbar.itemList
+        tabbar.totalData?.archive(fileName: "saved")
     }
    
     
@@ -95,6 +98,11 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         tabbar.itemList[itemIndex].currentCount = itemListCopy[itemIndex].currentCount - Int(quantityStepper.value)
         
         tabbar.itemList = itemListCopy
+        
+        //persistent data functions
+        tabbar.totalData?.CheckListData = tabbar.checkList
+        tabbar.totalData?.ItemListData = tabbar.itemList
+        tabbar.totalData?.archive(fileName: "saved")
         
         //reset after new checkout is made
         reset(doneButton)

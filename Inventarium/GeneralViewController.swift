@@ -20,8 +20,7 @@ class GeneralViewController: UITabBarController{
         var item1 = Item(name: "Item Sample 1", currentCount: 5, totalCount : 10)
         var item2 = Item(name: "Item Sample 2", currentCount: 15, totalCount : 20)
         itemList = [item1!, item2!]
-        totalData?.ItemListData = itemList
-        // Do any additional setup after loading the view.
+        totalData?.restore(fileName: "saved")
     }
 
     override func didReceiveMemoryWarning() {
