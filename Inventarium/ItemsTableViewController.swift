@@ -66,7 +66,7 @@ class ItemsTableViewController: UITableViewController {
     
     //Actions
     @IBAction func unwindToItemList(sender: UIStoryboardSegue) {
-        let tabbar = tabBarController as! GeneralViewController
+        
         if let sourceViewController = sender.source as? NewItemViewController,
             let item = sourceViewController.item {
             
@@ -76,9 +76,11 @@ class ItemsTableViewController: UITableViewController {
                 
                 items.append(item)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
             //persistent data functions
-            tabbar.totalData?.ItemListData = items
-            tabbar.totalData?.archive(fileName: "saved")
+            totalData?.ItemListData = items
+            totalData?.archive(fileName: "saved")
+            
         
         }
         if let EsourceViewController = sender.source as? EditItemViewController,
@@ -88,9 +90,11 @@ class ItemsTableViewController: UITableViewController {
                 // Update an existing item.
                 items[selectedIndexPath.row] = item
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
+                
                 //persistent data functions
-                tabbar.totalData?.ItemListData = items
-                tabbar.totalData?.archive(fileName: "saved")
+                totalData?.ItemListData = items
+                totalData?.archive(fileName: "saved")
+                
             }
             
         }
@@ -125,7 +129,7 @@ class ItemsTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let tabbar = tabBarController as! GeneralViewController
-        tabbar.totalData?.restore(fileName: "saved")
+       
         items = tabbar.itemList
         tableView.reloadData()
     }

@@ -18,16 +18,18 @@ class HistoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tabbar = tabBarController as! GeneralViewController
-        checkouts = tabbar.checkList
+        totalData?.restore(fileName: "saved")
+        checkouts = (totalData?.CheckListData)!
          self.tableView.allowsSelection = true
       
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let tabbar = tabBarController as! GeneralViewController
-        checkouts = tabbar.checkList
+        totalData?.restore(fileName: "saved")
+        checkouts = (totalData?.CheckListData)!
        tableView.reloadData()
+        
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,10 +107,10 @@ class HistoryTableViewController: UITableViewController {
             tabbar.checkList = checkouts
             
             //persistent data functions
-            tabbar.totalData?.CheckListData = checkouts
-            tabbar.totalData?.ItemListData = tabbar.itemList
-            tabbar.totalData?.archive(fileName: "saved")
-            
+            totalData?.ItemListData = tabbar.itemList
+            totalData?.CheckListData = checkouts
+            totalData?.archive(fileName: "saved")
+        
         }
     }
     @IBAction func unwindToCheckoutReCount(sender: UIStoryboardSegue) {
@@ -129,9 +131,10 @@ class HistoryTableViewController: UITableViewController {
                 tabbar.checkList = checkouts
                 
                 //persistent data functions
-                tabbar.totalData?.CheckListData = checkouts
-                tabbar.totalData?.ItemListData = tabbar.itemList
-                tabbar.totalData?.archive(fileName: "saved")
+                totalData?.ItemListData = tabbar.itemList
+                totalData?.CheckListData = checkouts
+                totalData?.archive(fileName: "saved")
+        
                 
             }
     }
