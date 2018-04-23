@@ -108,6 +108,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         
         //reset after new checkout is made
         reset(doneButton)
+        updateDoneButton()
         
     }
     
