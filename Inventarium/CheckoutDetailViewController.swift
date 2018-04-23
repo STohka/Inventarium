@@ -33,7 +33,7 @@ class CheckoutDetailViewController: UIViewController {
             ItemLabel.text = "Borrowed Item : " + checkout.itemType
             QuantityLabel.text = "Quantity : " + String(checkout.quantity)
             BDateLabel.text = "Borrowed Date : " + String(describing: checkout.currentDate)
-            RDateLabel.text = "Date need to be returned : " + String(describing: checkout.returnDate)
+            RDateLabel.text = "Return Date : " + String(describing: checkout.returnDate)
             ReturnCountStepper.maximumValue = Double(checkout.quantity)
             ReturnCountStepper.value = 1
             ReturnCountLabel.text = String(Int(ReturnCountStepper.value))
