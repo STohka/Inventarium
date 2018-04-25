@@ -236,7 +236,6 @@
 				TargetAttributes = {
 					9D6307B7200FC34700D6D134 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 96L2Y94678;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -473,7 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 96L2Y94678;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Inventarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.District196.Inventarium;
@@ -489,7 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 96L2Y94678;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Inventarium/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.District196.Inventarium;
