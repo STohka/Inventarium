@@ -13,6 +13,7 @@ class CheckoutDetailViewController: UIViewController {
     var checkout : Checkout?
     var checkoutIndex : Int = 0
     var returnCount : Int = 0
+    @IBOutlet weak var button: UIBarButtonItem!
     
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var GroupLabel: UILabel!
@@ -40,7 +41,6 @@ class CheckoutDetailViewController: UIViewController {
             ReturnCountStepper.minimumValue = 1
             returnCount = 1
         }
-        
         
     }
  
