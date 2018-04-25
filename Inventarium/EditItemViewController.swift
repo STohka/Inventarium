@@ -45,11 +45,11 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
             totalItemCountInput.text = String (item.totalCount)
             currentItemCountInput.text = String (item.currentCount)
             totalItemCountStepper.maximumValue = Double.infinity
-            currentItemCountStepper.maximumValue = Double.infinity
+            currentItemCountStepper.maximumValue = Double(item.totalCount - item.checkedCount)
             totalItemCountStepper.value = Double(item.totalCount)
             currentItemCountStepper.value = Double(item.currentCount)
-            totalItemCountStepper.minimumValue = Double (item.currentCount)
-            currentItemCountStepper.maximumValue = Double (item.totalCount)
+            totalItemCountStepper.minimumValue = Double (item.currentCount + item.checkedCount)
+            currentItemCountStepper.minimumValue = 0
             
         }
         
@@ -109,8 +109,9 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         let cNumber = currentItemCountInput.text ?? ""
         currentItemCountStepper.value = Double(cNumber)!
         totalItemCountStepper.value = Double(tNumber)!
-        totalItemCountStepper.minimumValue = Double (cNumber)!
-        currentItemCountStepper.maximumValue = Double (tNumber)!
+        totalItemCountStepper.minimumValue = Double ((item?.currentCount)! + (item?.checkedCount)!)
+        currentItemCountStepper.maximumValue = Double((item?.totalCount)! - (item?.checkedCount)!)
+        
         
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -127,6 +128,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     @IBAction func totalStepAction(_ sender: UIStepper) {
         item?.totalCount = Int(sender.value)
         totalItemCountInput.text = String (describing: item!.totalCount)
+        
         updateNumberCount()
     }
     
@@ -134,6 +136,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
 
         item?.currentCount = Int(sender.value)
         currentItemCountInput.text = String (describing: item!.currentCount)
+        
         updateNumberCount()
     }
     

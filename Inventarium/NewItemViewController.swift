@@ -46,7 +46,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         let currentCount = Int(itemNumberInput.text!)
         let totalCount = Int(itemNumberInput.text!)
         
-        item = Item(name : name, currentCount : currentCount!, totalCount : totalCount!)
+        item = Item(name : name, currentCount : currentCount!, totalCount : totalCount!, checkedCount : 0)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

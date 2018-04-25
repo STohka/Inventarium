@@ -13,8 +13,8 @@ import os.log
     var totalData = Inventorium(CheckListData: [Checkout](), ItemListData: [Item]())
 
 class GeneralViewController: UITabBarController{
-    var item1 = Item(name: "Item Sample 1", currentCount: 10, totalCount : 10)
-    var item2 = Item(name: "Item Sample 2", currentCount: 20, totalCount : 20)
+    var item1 = Item(name: "Item Sample 1", currentCount: 10, totalCount : 10, checkedCount : 0)
+    var item2 = Item(name: "Item Sample 2", currentCount: 20, totalCount : 20, checkedCount : 0)
     
     var itemList = [Item]()
     var checkList = [Checkout]()
