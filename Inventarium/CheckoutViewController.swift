@@ -97,6 +97,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         tabbar.checkList.insert((newCheck!), at: 0)
         
         tabbar.itemList[itemIndex].currentCount = itemListCopy[itemIndex].currentCount - Int(quantityStepper.value)
+        tabbar.itemList[itemIndex].checkedCount = itemListCopy[itemIndex].checkedCount + Int(quantity)
         
         tabbar.itemList = itemListCopy
         

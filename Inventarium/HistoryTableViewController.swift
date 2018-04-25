@@ -101,7 +101,9 @@ class HistoryTableViewController: UITableViewController {
             let item = sourceViewController.checkout {
             
             let curCount  = tabbar.itemList[(item.itemIndex)].currentCount
+            let chkCount = tabbar.itemList[item.itemIndex].checkedCount
             tabbar.itemList[(item.itemIndex)].currentCount = curCount + item.quantity
+            tabbar.itemList[item.itemIndex].checkedCount = chkCount - item.quantity
             checkouts.remove(at: checkIndex)
             tableView.reloadData()
             tabbar.checkList = checkouts
@@ -119,8 +121,11 @@ class HistoryTableViewController: UITableViewController {
                 let item = sourceViewController.checkout {
                  
                 let curCount  = tabbar.itemList[(item.itemIndex)].currentCount
+                let chkCount = tabbar.itemList[item.itemIndex].checkedCount
                 tabbar.itemList[(item.itemIndex)].currentCount = curCount + sourceViewController.returnCount
                 checkouts[checkIndex].quantity = checkouts[checkIndex].quantity - sourceViewController.returnCount
+                
+                tabbar.itemList[item.itemIndex].checkedCount = chkCount - item.quantity
                 
                 if (item.quantity == 0)
                 {
