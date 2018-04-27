@@ -16,6 +16,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var totalItemCountStepper: UIStepper!
     @IBOutlet weak var currentItemCountStepper: UIStepper!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var chkNumber: UILabel!
     
     
     
@@ -50,7 +51,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
             currentItemCountStepper.value = Double(item.currentCount)
             totalItemCountStepper.minimumValue = Double (item.currentCount + item.checkedCount)
             currentItemCountStepper.minimumValue = 0
-            
+            chkNumber.text = String(item.checkedCount)
         }
         
         originalName = (item?.name)!

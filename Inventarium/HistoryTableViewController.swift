@@ -125,7 +125,7 @@ class HistoryTableViewController: UITableViewController {
                 tabbar.itemList[(item.itemIndex)].currentCount = curCount + sourceViewController.returnCount
                 checkouts[checkIndex].quantity = checkouts[checkIndex].quantity - sourceViewController.returnCount
                 
-                tabbar.itemList[item.itemIndex].checkedCount = chkCount - item.quantity
+                tabbar.itemList[item.itemIndex].checkedCount = chkCount - sourceViewController.returnCount
                 
                 if (item.quantity == 0)
                 {

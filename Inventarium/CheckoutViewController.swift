@@ -164,6 +164,12 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
             doneButton.isEnabled = false
         }
         
+        if (itemListCopy.count == 0)
+        {
+            doneButton.isEnabled = false
+        }
+        
+        
     }
  
     

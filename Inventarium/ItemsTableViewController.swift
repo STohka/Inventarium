@@ -137,6 +137,9 @@ class ItemsTableViewController: UITableViewController {
     override func viewDidDisappear(_ animated: Bool) {
         let tabbar = tabBarController as! GeneralViewController
         tabbar.itemList = items
+        editButton.title = "Edit"
+         showAddbutton()
+        self.tableView.setEditing(false, animated: true)
         
     }
 
