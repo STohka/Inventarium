@@ -626,6 +626,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="chkNumber" destination="tva-th-elr" id="8AJ-Ed-pgI"/>
                         <outlet property="currentItemCountInput" destination="HJc-5k-tLP" id="xW4-UF-rsi"/>
                         <outlet property="currentItemCountStepper" destination="f1E-9w-onJ" id="kle-d5-SI5"/>
                         <outlet property="itemNameInput" destination="FVC-pf-xFg" id="zXp-Pa-mSF"/>
