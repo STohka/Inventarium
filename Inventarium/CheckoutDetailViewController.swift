@@ -29,6 +29,16 @@ class CheckoutDetailViewController: UIViewController {
         super.viewDidLoad()
 
         if let checkout = checkout {
+            totalData?.restore(fileName: "saved")
+            
+            let count: Int = (totalData?.ItemListData.count)!
+            var itemName: Array<String?> = Array(repeating: nil, count: count
+            )
+            for i in 0...(count - 1){
+                itemName[i] = (totalData?.ItemListData[i].name)!
+                print(itemName.count)
+                print(itemName[i])
+            }
             NameLabel.text = "Name : " + checkout.name
             GroupLabel.text = "Group : " + checkout.group
             ItemLabel.text = "Borrowed Item : " + checkout.itemType
@@ -40,6 +50,16 @@ class CheckoutDetailViewController: UIViewController {
             ReturnCountLabel.text = String(Int(ReturnCountStepper.value))
             ReturnCountStepper.minimumValue = 1
             returnCount = 1
+            
+            for i in 0...(count - 1)
+            {
+                if (itemName[i] == checkout.itemType)
+                {
+                    checkoutIndex = i
+                    
+                }
+            }
+            print(checkoutIndex)
         }
         
     }

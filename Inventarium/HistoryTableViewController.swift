@@ -99,7 +99,7 @@ class HistoryTableViewController: UITableViewController {
          let tabbar = tabBarController as! GeneralViewController
         if let sourceViewController = sender.source as? CheckoutDetailViewController,
             let item = sourceViewController.checkout {
-            
+            item.itemIndex = sourceViewController.checkoutIndex
             let curCount  = tabbar.itemList[(item.itemIndex)].currentCount
             let chkCount = tabbar.itemList[item.itemIndex].checkedCount
             tabbar.itemList[(item.itemIndex)].currentCount = curCount + item.quantity
@@ -119,7 +119,7 @@ class HistoryTableViewController: UITableViewController {
             let tabbar = tabBarController as! GeneralViewController
             if let sourceViewController = sender.source as? CheckoutDetailViewController,
                 let item = sourceViewController.checkout {
-                 
+                item.itemIndex = sourceViewController.checkoutIndex
                 let curCount  = tabbar.itemList[(item.itemIndex)].currentCount
                 let chkCount = tabbar.itemList[item.itemIndex].checkedCount
                 tabbar.itemList[(item.itemIndex)].currentCount = curCount + sourceViewController.returnCount
