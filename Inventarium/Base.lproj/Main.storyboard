@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,7 +24,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="nNK-Pj-peF" kind="relationship" relationship="viewControllers" id="UMY-vP-QES"/>
@@ -55,6 +56,7 @@
                                 <segment title="Borrowed Date"/>
                                 <segment title="Return Date"/>
                             </segments>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryTableViewCell" id="fFQ-7y-3Vf" customClass="HistoryTableViewCell" customModule="Inventarium" customModuleProvider="target">
@@ -65,48 +67,49 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHS-Dm-2pi" userLabel="Item Name Label">
-                                            <rect key="frame" x="224" y="0.0" width="168" height="90"/>
+                                            <rect key="frame" x="324" y="0.0" width="168" height="90"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4y-xR-b7B" userLabel="Name Label">
-                                            <rect key="frame" x="20" y="12" width="186" height="21"/>
+                                            <rect key="frame" x="20" y="34" width="186" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="36"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiK-0w-iTv" userLabel="Quantity Label">
-                                            <rect key="frame" x="430" y="42" width="65" height="22"/>
+                                            <rect key="frame" x="496" y="31" width="73" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="45"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awp-9y-TJ7">
-                                            <rect key="frame" x="20" y="57" width="174" height="21"/>
+                                            <rect key="frame" x="196" y="34" width="174" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Borrowed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsk-4b-zrk" userLabel="Date Borrowed Label">
-                                            <rect key="frame" x="575" y="34" width="193" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quantity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueA-VC-dyb">
-                                            <rect key="frame" x="430" y="0.0" width="65" height="21"/>
+                                            <rect key="frame" x="492" y="2" width="81" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date Borrowed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsk-4b-zrk" userLabel="Date Borrowed Label">
+                                            <rect key="frame" x="622" y="34" width="193" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="NameLabel" destination="t4y-xR-b7B" id="Aft-lS-5gq"/>
@@ -184,22 +187,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dqv-2A-TsJ">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <navigationItem id="lLx-GA-6uI">
-                                        <barButtonItem key="leftBarButtonItem" title="Back to History" largeContentSizeImage="Reset Button 2" id="AGG-9x-Y4e">
-                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <connections>
-                                                <action selector="backButton:" destination="BFz-gp-fiD" id="725-YN-bO6"/>
-                                                <segue destination="TJN-1w-Psw" kind="unwind" unwindAction="unwindToCheckoutListWithSender:" id="Yd9-jR-hzn"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4N-yb-dlu">
                                 <rect key="frame" x="332" y="702" width="104" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -243,6 +230,22 @@
                                     <segue destination="TJN-1w-Psw" kind="unwind" unwindAction="unwindToCheckoutReturnWithSender:" id="hw2-WZ-9EE"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dqv-2A-TsJ">
+                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem id="lLx-GA-6uI">
+                                        <barButtonItem key="leftBarButtonItem" title="Back to History" largeContentSizeImage="Reset Button 2" id="AGG-9x-Y4e">
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <connections>
+                                                <action selector="backButton:" destination="BFz-gp-fiD" id="725-YN-bO6"/>
+                                                <segue destination="TJN-1w-Psw" kind="unwind" unwindAction="unwindToCheckoutListWithSender:" id="Yd9-jR-hzn"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -274,14 +277,20 @@
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="dHg-1P-Xed">
                             <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
+                            </textAttributes>
                             <items>
                                 <navigationItem title="Items" id="jgA-gr-2n1">
                                     <barButtonItem key="leftBarButtonItem" title="Edit" id="HbE-Tm-cgG">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="doEditWithSender:" destination="7wU-xy-60E" id="Jhz-hu-yOK"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" systemItem="add" id="wUp-s9-1dl">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="Yvx-n3-54b" kind="popoverPresentation" popoverAnchorBarButtonItem="wUp-s9-1dl" id="kir-PA-U6M">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -299,17 +308,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gys-vu-bA7">
-                                            <rect key="frame" x="283" y="35" width="318" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXA-yF-GII">
                                             <rect key="frame" x="20" y="21" width="249" height="47"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="29"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gys-vu-bA7">
+                                            <rect key="frame" x="373" y="34" width="318" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="26"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -327,7 +336,9 @@
                             <outlet property="delegate" destination="7wU-xy-60E" id="k6R-cp-umc"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Items" image="first" id="X0H-wf-uxE"/>
+                    <tabBarItem key="tabBarItem" title="Items" image="first" id="X0H-wf-uxE">
+                        <color key="badgeColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="addItem" destination="wUp-s9-1dl" id="n8S-Mr-z3T"/>
                         <outlet property="editButton" destination="HbE-Tm-cgG" id="0YU-tJ-k1r"/>
@@ -477,17 +488,28 @@
                                     <!--2018-02-20 17:12:32 +0000-->
                                 </date>
                             </datePicker>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2M-9l-alR">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZI-g4-LHV">
+                                <rect key="frame" x="10" y="464" width="264" height="201"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2M-9l-alR">
+                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Checkout" id="3CT-dW-tWK">
                                         <barButtonItem key="leftBarButtonItem" title="Reset" id="eDl-7e-Rs6">
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="reset:" destination="nNK-Pj-peF" id="nOn-GX-yNL"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="EPh-gF-tuY">
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="done:" destination="nNK-Pj-peF" id="uNx-5P-LrP"/>
                                             </connections>
@@ -495,10 +517,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZI-g4-LHV">
-                                <rect key="frame" x="10" y="464" width="264" height="201"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -529,47 +547,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Number of Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFv-GV-RcX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Number of Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFv-GV-RcX">
                                 <rect key="frame" x="303.5" y="202" width="161" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Number of Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWY-hj-xXw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Number of Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWY-hj-xXw">
                                 <rect key="frame" x="293" y="372" width="182" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9Xw-Hr-aSZ">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9Xw-Hr-aSZ">
                                 <rect key="frame" x="337" y="327.5" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="totalStepAction:" destination="1gi-Pj-SgR" eventType="valueChanged" id="1MX-UC-oOv"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="f1E-9w-onJ">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="f1E-9w-onJ">
                                 <rect key="frame" x="337" y="497.5" width="94" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="currentStepAction:" destination="1gi-Pj-SgR" eventType="valueChanged" id="aha-Wq-q1c"/>
                                 </connections>
                             </stepper>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVC-pf-xFg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVC-pf-xFg">
                                 <rect key="frame" x="320" y="132" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="00" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7IP-LX-DJ6">
+                                <rect key="frame" x="277" y="249" width="215" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="60"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="00" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJc-5k-tLP">
+                                <rect key="frame" x="271" y="429" width="227" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="60"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VVo-nU-Tih">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.76878238340000005" green="0.76878238340000005" blue="0.76878238340000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Edit Item" id="erc-Mg-E99">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Nii-6a-SNh">
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="cancel:" destination="1gi-Pj-SgR" id="aNW-mQ-TgB"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ukW-4d-FOW">
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <segue destination="t6s-V9-Rbz" kind="unwind" unwindAction="unwindToItemListWithSender:" id="XdP-f1-neG"/>
                                             </connections>
@@ -577,40 +622,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7IP-LX-DJ6">
-                                <rect key="frame" x="284" y="248" width="200" height="60"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJc-5k-tLP">
-                                <rect key="frame" x="284" y="429" width="200" height="60"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="9Xw-Hr-aSZ" firstAttribute="centerY" secondItem="uZ4-Ix-Ab2" secondAttribute="centerY" constant="-170" id="2m9-ve-G3p"/>
-                            <constraint firstItem="GFv-GV-RcX" firstAttribute="centerX" secondItem="uZ4-Ix-Ab2" secondAttribute="centerX" id="3fh-jL-SIs"/>
-                            <constraint firstItem="f1E-9w-onJ" firstAttribute="centerX" secondItem="uZ4-Ix-Ab2" secondAttribute="centerX" id="9tE-O9-bLJ"/>
-                            <constraint firstItem="9Xw-Hr-aSZ" firstAttribute="top" secondItem="7IP-LX-DJ6" secondAttribute="bottom" constant="19.5" id="ACg-W5-4sz"/>
-                            <constraint firstItem="7IP-LX-DJ6" firstAttribute="leading" secondItem="uZ4-Ix-Ab2" secondAttribute="leadingMargin" constant="264" id="GK3-2B-aIs"/>
-                            <constraint firstItem="f1E-9w-onJ" firstAttribute="top" secondItem="HJc-5k-tLP" secondAttribute="bottom" constant="8.5" id="HyM-Jy-cBk"/>
-                            <constraint firstItem="f1E-9w-onJ" firstAttribute="centerY" secondItem="uZ4-Ix-Ab2" secondAttribute="centerY" id="Sw6-SM-HXe"/>
-                            <constraint firstItem="FVC-pf-xFg" firstAttribute="centerX" secondItem="uZ4-Ix-Ab2" secondAttribute="centerX" id="T9F-py-XDB"/>
-                            <constraint firstItem="FVC-pf-xFg" firstAttribute="centerY" secondItem="uZ4-Ix-Ab2" secondAttribute="centerY" constant="-365" id="VDw-kJ-zBw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HJc-5k-tLP" secondAttribute="trailing" constant="264" id="Zfp-AK-P93"/>
-                            <constraint firstItem="7IP-LX-DJ6" firstAttribute="top" secondItem="GFv-GV-RcX" secondAttribute="bottom" constant="25" id="ZwE-PN-An8"/>
-                            <constraint firstItem="HJc-5k-tLP" firstAttribute="top" secondItem="dWY-hj-xXw" secondAttribute="bottom" constant="36" id="aLD-Vh-ILf"/>
-                            <constraint firstItem="dWY-hj-xXw" firstAttribute="centerY" secondItem="uZ4-Ix-Ab2" secondAttribute="centerY" constant="-130" id="eKV-mO-XAI"/>
-                            <constraint firstItem="dWY-hj-xXw" firstAttribute="centerX" secondItem="uZ4-Ix-Ab2" secondAttribute="centerX" id="gdL-u9-dak"/>
-                            <constraint firstItem="HJc-5k-tLP" firstAttribute="leading" secondItem="uZ4-Ix-Ab2" secondAttribute="leadingMargin" constant="264" id="mWn-KI-mqB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7IP-LX-DJ6" secondAttribute="trailing" constant="264" id="q7F-8G-mk1"/>
-                            <constraint firstItem="9Xw-Hr-aSZ" firstAttribute="centerX" secondItem="uZ4-Ix-Ab2" secondAttribute="centerX" id="qe6-ZR-ZYO"/>
-                            <constraint firstItem="GFv-GV-RcX" firstAttribute="centerY" secondItem="uZ4-Ix-Ab2" secondAttribute="centerY" constant="-300" id="wnb-Af-zsP"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="currentItemCountInput" destination="HJc-5k-tLP" id="xW4-UF-rsi"/>
