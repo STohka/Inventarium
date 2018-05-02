@@ -110,6 +110,9 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         //reset after new checkout is made
         reset(doneButton)
         updateDoneButton()
+        itemInput.selectRow(0, inComponent: 0, animated: true)
+        quantityStepper.maximumValue = Double(itemListCopy[0].currentCount)
+        dateInput.date = Date()
         
     }
     
@@ -140,6 +143,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return itemListCopy.count
     }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         itemName = itemListCopy[row].name
