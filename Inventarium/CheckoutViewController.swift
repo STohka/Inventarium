@@ -49,8 +49,11 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         quantityStepper.value = 0
         quantityLabel.text = String(Int(quantityStepper.value))
         quantityStepper.minimumValue = 0
-        quantityStepper.maximumValue = Double.infinity
         dateInput.minimumDate = Date()
+        
+        itemInput.selectRow(0, inComponent: 0, animated: true)
+        itemIndex = 0
+        quantityStepper.maximumValue = Double(itemListCopy[0].currentCount)
 
         updateDoneButton()
     }
@@ -78,6 +81,9 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         nameInput.text = ""
         groupInput.text = ""
         quantityStepper.value = 0
+        itemInput.selectRow(0, inComponent: 0, animated: true)
+        quantityStepper.maximumValue = Double(itemListCopy[0].currentCount)
+        itemIndex = 0
         quantityLabel.text = String(Int(quantityStepper.value))
         dateInput.date = Date()
         
@@ -112,6 +118,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         updateDoneButton()
         itemInput.selectRow(0, inComponent: 0, animated: true)
         quantityStepper.maximumValue = Double(itemListCopy[0].currentCount)
+        itemIndex = 0
         dateInput.date = Date()
         
     }
