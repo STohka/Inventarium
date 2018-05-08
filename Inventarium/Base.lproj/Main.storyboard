@@ -384,11 +384,13 @@
                                 <items>
                                     <navigationItem title="New Item" id="BKF-TI-M4i">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8id-0f-LWt">
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="cancel:" destination="Yvx-n3-54b" id="Kos-oE-Exq"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="5Sp-Xm-Mdj">
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <segue destination="na9-BE-pMi" kind="unwind" unwindAction="unwindToItemListWithSender:" id="pDm-gb-GDg"/>
                                             </connections>
