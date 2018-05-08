@@ -40,7 +40,6 @@ class CheckoutDetailViewController: UIViewController {
                 print(itemName[i])
             }
             NameLabel.text = "Name : " + checkout.name
-            GroupLabel.text = "Group : " + checkout.group
             ItemLabel.text = "Borrowed Item : " + checkout.itemType
             QuantityLabel.text = "Quantity : " + String(checkout.quantity)
             BDateLabel.text = "Borrowed Date : " + String(describing: checkout.currentDate)
@@ -50,6 +49,15 @@ class CheckoutDetailViewController: UIViewController {
             ReturnCountLabel.text = String(Int(ReturnCountStepper.value))
             ReturnCountStepper.minimumValue = 1
             returnCount = 1
+            if(checkout.group == "")
+            {
+                GroupLabel.text = "Group : None"
+                GroupLabel.textColor = UIColor.gray
+            }
+            else
+            {
+                GroupLabel.text = "Group : " + checkout.group
+            }
             
             for i in 0...(count - 1)
             {

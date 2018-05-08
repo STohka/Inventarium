@@ -64,7 +64,15 @@ class HistoryTableViewController: UITableViewController {
         cell.dateBorrowedLabel.text = String(describing: historyItem.currentDate)
         cell.groupLabel.text = historyItem.group
         cell.quantityTag.text = "Quantity"
-        
+        if(cell.groupLabel.text == "")
+        {
+            cell.groupLabel.text = "None"
+            cell.groupLabel.textColor = UIColor.gray
+        }
+        else
+        {
+            cell.groupLabel.textColor = UIColor.black
+        }
         return cell
     }
     
