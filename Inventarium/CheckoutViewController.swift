@@ -29,6 +29,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        totalData?.restore(fileName: "saved")
         updateDoneButton()
     }
     
@@ -43,14 +44,17 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         itemInput.delegate = self
         itemInput.dataSource = self
         itemListCopy = (totalData?.ItemListData)!
-        
+        checkouts = (totalData?.CheckListData)!
         nameInput.text = ""
         groupInput.text = ""
         quantityStepper.value = 0
         quantityLabel.text = String(Int(quantityStepper.value))
         quantityStepper.minimumValue = 0
-        quantityStepper.maximumValue = Double.infinity
         dateInput.minimumDate = Date()
+        
+        itemInput.selectRow(0, inComponent: 0, animated: true)
+        itemIndex = 0
+        quantityStepper.maximumValue = Double(itemListCopy[0].currentCount)
 
         updateDoneButton()
     }
@@ -78,6 +82,9 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         nameInput.text = ""
         groupInput.text = ""
         quantityStepper.value = 0
+        itemInput.selectRow(0, inComponent: 0, animated: true)
+        quantityStepper.maximumValue = Double(itemListCopy[0].currentCount)
+        itemIndex = 0
         quantityLabel.text = String(Int(quantityStepper.value))
         dateInput.date = Date()
         
@@ -94,7 +101,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         let itemSelected = itemListCopy[itemIndex].name
         let currentDate = Date()
         newCheck = Checkout (name: nameInput, group: groupInput, itemType: itemSelected, quantity: Int(quantity), returnDate: returnDate, currentDate: currentDate, itemIndex : itemIndex)
-        tabbar.checkList.insert((newCheck!), at: 0)
+        checkouts.insert((newCheck!), at: 0)
         
         tabbar.itemList[itemIndex].currentCount = itemListCopy[itemIndex].currentCount - Int(quantityStepper.value)
         tabbar.itemList[itemIndex].checkedCount = itemListCopy[itemIndex].checkedCount + Int(quantity)
@@ -103,7 +110,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         
         //persistent data functions
         totalData?.ItemListData = itemListCopy
-        totalData?.CheckListData = tabbar.checkList
+        totalData?.CheckListData = checkouts
         totalData?.archive(fileName: "saved")
         
         
@@ -112,6 +119,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         updateDoneButton()
         itemInput.selectRow(0, inComponent: 0, animated: true)
         quantityStepper.maximumValue = Double(itemListCopy[0].currentCount)
+        itemIndex = 0
         dateInput.date = Date()
         
     }
