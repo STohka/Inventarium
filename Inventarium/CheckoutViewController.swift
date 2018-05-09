@@ -54,16 +54,22 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         
         itemInput.selectRow(0, inComponent: 0, animated: true)
         itemIndex = 0
+        if(itemListCopy.count > 0)
+        {
         quantityStepper.maximumValue = Double(itemListCopy[0].currentCount)
-
+        }
+        else{
+            quantityStepper.maximumValue = 0
+        }
+        
         updateDoneButton()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        let tabbar = tabBarController as! GeneralViewController
-        tabbar.itemList = itemListCopy
         
-        //persistent data functions
+        totalData?.ItemListData = itemListCopy
+        totalData?.archive(fileName: "saved")
+        
        
         
     }
@@ -92,8 +98,9 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     }
     //button action functions
     @IBAction func done(_ sender: UIBarButtonItem) {
-        let tabbar = tabBarController as! GeneralViewController
-        tabbar.itemList = itemListCopy
+
+        var itemList = totalData?.ItemListData
+        totalData?.ItemListData = itemListCopy
         let nameInput = self.nameInput.text ?? ""
         let groupInput = self.groupInput.text ?? ""
         let quantity = quantityStepper.value
@@ -103,10 +110,10 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         newCheck = Checkout (name: nameInput, group: groupInput, itemType: itemSelected, quantity: Int(quantity), returnDate: returnDate, currentDate: currentDate, itemIndex : itemIndex)
         checkouts.insert((newCheck!), at: 0)
         
-        tabbar.itemList[itemIndex].currentCount = itemListCopy[itemIndex].currentCount - Int(quantityStepper.value)
-        tabbar.itemList[itemIndex].checkedCount = itemListCopy[itemIndex].checkedCount + Int(quantity)
+        itemList![itemIndex].currentCount = itemListCopy[itemIndex].currentCount - Int(quantityStepper.value)
+        itemList![itemIndex].checkedCount = itemListCopy[itemIndex].checkedCount + Int(quantity)
         
-        tabbar.itemList = itemListCopy
+        itemList = itemListCopy
         
         //persistent data functions
         totalData?.ItemListData = itemListCopy

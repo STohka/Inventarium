@@ -104,36 +104,36 @@ class HistoryTableViewController: UITableViewController {
         }
     
     @IBAction func unwindToCheckoutReturn(sender: UIStoryboardSegue) {
-         let tabbar = tabBarController as! GeneralViewController
+        let itemList = totalData?.ItemListData
         if let sourceViewController = sender.source as? CheckoutDetailViewController,
             let item = sourceViewController.checkout {
             item.itemIndex = sourceViewController.checkoutIndex
-            let curCount  = tabbar.itemList[(item.itemIndex)].currentCount
-            let chkCount = tabbar.itemList[item.itemIndex].checkedCount
-            tabbar.itemList[(item.itemIndex)].currentCount = curCount + item.quantity
-            tabbar.itemList[item.itemIndex].checkedCount = chkCount - item.quantity
+            let curCount  = itemList![(item.itemIndex)].currentCount
+            let chkCount = itemList![item.itemIndex].checkedCount
+            itemList![(item.itemIndex)].currentCount = curCount + item.quantity
+            itemList![item.itemIndex].checkedCount = chkCount - item.quantity
             checkouts.remove(at: checkIndex)
             tableView.reloadData()
-            tabbar.checkList = checkouts
             
             //persistent data functions
-            totalData?.ItemListData = tabbar.itemList
+            totalData?.ItemListData = itemList!
             totalData?.CheckListData = checkouts
             totalData?.archive(fileName: "saved")
         
         }
     }
     @IBAction func unwindToCheckoutReCount(sender: UIStoryboardSegue) {
-            let tabbar = tabBarController as! GeneralViewController
+
+        let itemList = totalData?.ItemListData
             if let sourceViewController = sender.source as? CheckoutDetailViewController,
                 let item = sourceViewController.checkout {
                 item.itemIndex = sourceViewController.checkoutIndex
-                let curCount  = tabbar.itemList[(item.itemIndex)].currentCount
-                let chkCount = tabbar.itemList[item.itemIndex].checkedCount
-                tabbar.itemList[(item.itemIndex)].currentCount = curCount + sourceViewController.returnCount
+                let curCount  = itemList![(item.itemIndex)].currentCount
+                let chkCount = itemList![item.itemIndex].checkedCount
+                itemList![(item.itemIndex)].currentCount = curCount + sourceViewController.returnCount
                 checkouts[checkIndex].quantity = checkouts[checkIndex].quantity - sourceViewController.returnCount
                 
-                tabbar.itemList[item.itemIndex].checkedCount = chkCount - sourceViewController.returnCount
+                itemList![item.itemIndex].checkedCount = chkCount - sourceViewController.returnCount
                 
                 if (item.quantity == 0)
                 {
@@ -141,10 +141,9 @@ class HistoryTableViewController: UITableViewController {
                 }
                 
                 tableView.reloadData()
-                tabbar.checkList = checkouts
                 
                 //persistent data functions
-                totalData?.ItemListData = tabbar.itemList
+                totalData?.ItemListData = itemList!
                 totalData?.CheckListData = checkouts
                 totalData?.archive(fileName: "saved")
         
