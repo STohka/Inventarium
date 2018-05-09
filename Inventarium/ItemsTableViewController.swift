@@ -20,6 +20,8 @@ class ItemsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        totalData?.restore(fileName: "saved")
+        items = (totalData?.ItemListData)!
         self.tableView.allowsSelectionDuringEditing = true
         self.tableView.allowsSelection = false
         
@@ -91,13 +93,14 @@ class ItemsTableViewController: UITableViewController {
                 items[selectedIndexPath.row] = item
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
                 
-                //persistent data functions
-                totalData?.ItemListData = items
-                totalData?.archive(fileName: "saved")
+                
                 
             }
             
         }
+        //persistent data functions
+        totalData?.ItemListData = items
+        totalData?.archive(fileName: "saved")
 
         
     }
@@ -128,15 +131,14 @@ class ItemsTableViewController: UITableViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        let tabbar = tabBarController as! GeneralViewController
-       
-        items = tabbar.itemList
+        totalData?.restore(fileName: "saved")
+        items = (totalData?.ItemListData)!
         tableView.reloadData()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        let tabbar = tabBarController as! GeneralViewController
-        tabbar.itemList = items
+        totalData?.ItemListData = items
+        totalData?.archive(fileName: "saved")
         editButton.title = "Edit"
          showAddbutton()
         self.tableView.setEditing(false, animated: true)
