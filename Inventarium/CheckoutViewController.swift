@@ -170,7 +170,14 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         itemIndex = row
+        if(itemListCopy.count > 0)
+        {
         quantityStepper.maximumValue = Double(itemListCopy[row].currentCount)
+        }
+        else
+        {
+            quantityStepper.maximumValue = 0
+        }
     }
     
     //button state
