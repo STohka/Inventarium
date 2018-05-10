@@ -162,12 +162,21 @@ class ItemsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Notice", message: "There are checkouts made to this item, please return them before deleting this item", preferredStyle: .alert)
         if editingStyle == .delete {
+           
+            if (items[indexPath.row].checkedCount == 0){
             // Delete the row from the data source
             items.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .left)
             totalData?.ItemListData = items
             totalData?.archive(fileName: "saved")
+            }
+            else if (items[indexPath.row].checkedCount > 0){
+                
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+            }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
