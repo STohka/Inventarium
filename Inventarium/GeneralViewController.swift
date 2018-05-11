@@ -25,6 +25,10 @@ class GeneralViewController: UITabBarController{
         totalData?.ItemListData = itemList
         totalData?.CheckListData = checkList
     }
+    
+    override open var shouldAutorotate: Bool {
+        return false
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

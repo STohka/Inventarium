@@ -33,6 +33,10 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         updateDoneButton()
     }
     
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
     //loading & initiates object value
     override func viewDidAppear(_ animated: Bool) {
         

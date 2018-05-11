@@ -27,6 +27,9 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
     }
+    override open var shouldAutorotate: Bool {
+        return false
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

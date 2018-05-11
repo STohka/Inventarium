@@ -62,6 +62,10 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         updateSaveButtonState()
     }
     
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

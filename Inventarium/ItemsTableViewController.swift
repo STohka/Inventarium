@@ -17,7 +17,7 @@ class ItemsTableViewController: UITableViewController {
 
     var items = [Item]()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         totalData?.restore(fileName: "saved")
@@ -26,6 +26,10 @@ class ItemsTableViewController: UITableViewController {
         self.tableView.allowsSelection = false
         
 
+    }
+    
+    override open var shouldAutorotate: Bool {
+        return false
     }
 
     override func didReceiveMemoryWarning() {

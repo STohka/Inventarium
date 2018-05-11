@@ -27,9 +27,16 @@ class CheckoutDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         if let checkout = checkout {
             totalData?.restore(fileName: "saved")
+            
+            let dateFormat = DateFormatter()
+            dateFormat.dateStyle = .short
+            let Cdate = dateFormat.string(from: checkout.currentDate)
+            let Rdate = dateFormat.string(from: checkout.returnDate)
             
             let count: Int = (totalData?.ItemListData.count)!
             var itemName: Array<String?> = Array(repeating: nil, count: count
@@ -42,8 +49,8 @@ class CheckoutDetailViewController: UIViewController {
             NameLabel.text = "Name : " + checkout.name
             ItemLabel.text = "Borrowed Item : " + checkout.itemType
             QuantityLabel.text = "Quantity : " + String(checkout.quantity)
-            BDateLabel.text = "Borrowed Date : " + String(describing: checkout.currentDate)
-            RDateLabel.text = "Return Date : " + String(describing: checkout.returnDate)
+            BDateLabel.text = "Borrowed Date : " + Cdate
+            RDateLabel.text = "Return Date : " + Rdate
             ReturnCountStepper.maximumValue = Double(checkout.quantity)
             ReturnCountStepper.value = 1
             ReturnCountLabel.text = String(Int(ReturnCountStepper.value))
@@ -70,6 +77,10 @@ class CheckoutDetailViewController: UIViewController {
             print(checkoutIndex)
         }
         
+    }
+    
+    override open var shouldAutorotate: Bool {
+        return false
     }
  
 

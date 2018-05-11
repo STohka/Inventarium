@@ -24,6 +24,10 @@ class HistoryTableViewController: UITableViewController {
       
     }
     
+    override open var shouldAutorotate: Bool {
+        return false
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         totalData?.restore(fileName: "saved")
         checkouts = (totalData?.CheckListData)!
@@ -58,10 +62,14 @@ class HistoryTableViewController: UITableViewController {
         }
         
         let historyItem = checkouts[indexPath.row]
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = .short
+        let Cdate = dateFormat.string(from: historyItem.currentDate)
+        
         cell.NameLabel.text = historyItem.name
         cell.itemNameLabel.text = historyItem.itemType
         cell.itemQuantityLabel.text = String(historyItem.quantity)
-        cell.dateBorrowedLabel.text = String(describing: historyItem.currentDate)
+        cell.dateBorrowedLabel.text = Cdate
         cell.groupLabel.text = historyItem.group
         cell.quantityTag.text = "Quantity"
         if(cell.groupLabel.text == "")
