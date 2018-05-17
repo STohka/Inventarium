@@ -137,8 +137,6 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         {
             totalItemCountInput.text = String(chkText + cText)
             updateNumberCount()
-            //alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-            //self.present(alert, animated: true)
             
         }
         if (chkText != 0 && tText == cText)
