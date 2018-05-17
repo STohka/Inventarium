@@ -10,13 +10,14 @@ import UIKit
 import os.log
 
 class EditItemViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var itemNameInput: UITextField!
+
     @IBOutlet weak var totalItemCountInput: UITextField!
     @IBOutlet weak var currentItemCountInput: UITextField!
     @IBOutlet weak var totalItemCountStepper: UIStepper!
     @IBOutlet weak var currentItemCountStepper: UIStepper!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var chkNumber: UILabel!
+    @IBOutlet weak var itemNameLabel: UILabel!
     
     
     
@@ -30,8 +31,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        itemNameInput.delegate = self
+
         totalItemCountInput.delegate = self
         currentItemCountInput.delegate = self
         self.totalItemCountInput.inputView = LNNumberpad.default()
@@ -42,7 +42,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         
         if let item = item {
             navigationItem.title = item.name
-            itemNameInput.text = item.name
+            itemNameLabel.text = item.name
             totalItemCountInput.text = String (item.totalCount)
             currentItemCountInput.text = String (item.currentCount)
             totalItemCountStepper.maximumValue = Double.infinity
@@ -80,7 +80,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let name = itemNameInput.text ?? ""
+        let name = itemNameLabel.text ?? ""
         let currentCount = Int(currentItemCountInput.text!)
         let totalCount = Int(totalItemCountInput.text!)
         item?.currentCount = currentCount!
@@ -95,7 +95,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         
     }
     private func updateSaveButtonState() {
-        let text = itemNameInput.text ?? ""
+        let text = itemNameLabel.text ?? ""
         let tNumber = totalItemCountInput.text ?? ""
         let cNumber = currentItemCountInput.text ?? ""
         
@@ -114,14 +114,40 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
         let cNumber = currentItemCountInput.text ?? ""
         currentItemCountStepper.value = Double(cNumber)!
         totalItemCountStepper.value = Double(tNumber)!
-        totalItemCountStepper.minimumValue = Double ((item?.currentCount)! + (item?.checkedCount)!)
-        currentItemCountStepper.maximumValue = Double((item?.totalCount)! - (item?.checkedCount)!)
+        totalItemCountStepper.minimumValue = Double ( Int(cNumber)! + (item?.checkedCount)!)
+        currentItemCountStepper.maximumValue = Double(Int(tNumber)! - (item?.checkedCount)!)
         
         
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        updateSaveButtonState()
+        var tText : Int = (item?.totalCount)!
+        var cText : Int = (item?.currentCount)!
+        let chkText : Int = (item?.checkedCount)!
+        if((totalItemCountInput.text?.isEmpty)! || (currentItemCountInput.text?.isEmpty)!)
+        {
+            totalItemCountInput.text = String(tText)
+            currentItemCountInput.text = String(cText)
+        }
+        else{
+        tText = Int(totalItemCountInput.text!)!
+        cText = Int(currentItemCountInput.text!)!
+        }
+        
+        if (tText < cText + chkText)
+        {
+            totalItemCountInput.text = String(chkText + cText)
+            updateNumberCount()
+            //alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            //self.present(alert, animated: true)
+            
+        }
+        if (chkText != 0 && tText == cText)
+        {
+            totalItemCountInput.text = String(cText)
+            updateNumberCount()
+        }
         updateNumberCount()
+        updateSaveButtonState()
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -154,6 +180,7 @@ class EditItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveUpdate(_ sender: UIBarButtonItem){
+        
         
     }
     
