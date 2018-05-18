@@ -167,6 +167,7 @@ class ItemsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let alert = UIAlertController(title: "Notice", message: "There are checkouts made to this item, please return them before deleting this item", preferredStyle: .alert)
+        alert.view.tintColor = UIColor.gray
         if editingStyle == .delete {
            
             if (items[indexPath.row].checkedCount == 0){
