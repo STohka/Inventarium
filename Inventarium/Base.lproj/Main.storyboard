@@ -661,7 +661,7 @@
     </scenes>
     <resources>
         <image name="Reset Button 2" width="596" height="350"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="first" width="50" height="50"/>
+        <image name="second" width="50" height="50"/>
     </resources>
 </document>
