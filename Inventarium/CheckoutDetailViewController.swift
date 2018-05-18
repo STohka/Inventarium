@@ -43,8 +43,6 @@ class CheckoutDetailViewController: UIViewController {
             )
             for i in 0...(count - 1){
                 itemName[i] = (totalData?.ItemListData[i].name)!
-                print(itemName.count)
-                print(itemName[i])
             }
             NameLabel.text = "Name : " + checkout.name
             ItemLabel.text = "Borrowed Item : " + checkout.itemType

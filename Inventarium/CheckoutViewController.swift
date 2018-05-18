@@ -102,7 +102,8 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
     }
     //button action functions
     @IBAction func done(_ sender: UIBarButtonItem) {
-
+        
+        
         var itemList = totalData?.ItemListData
         totalData?.ItemListData = itemListCopy
         let nameInput = self.nameInput.text ?? ""
@@ -119,6 +120,8 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         
         itemList = itemListCopy
         
+        let alert = UIAlertController(title: "Checkout Sucessful", message: "You have made " + String(Int(quantity)) + " checkout to " + itemSelected, preferredStyle: .alert)
+        
         //persistent data functions
         totalData?.ItemListData = itemListCopy
         totalData?.CheckListData = checkouts
@@ -132,6 +135,8 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         quantityStepper.maximumValue = Double(itemListCopy[0].currentCount)
         itemIndex = 0
         dateInput.date = Date()
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
         
     }
     
@@ -169,6 +174,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
          quantityStepper.maximumValue = Double(itemListCopy[row].currentCount)
         quantityStepper.value = 0
         quantityLabel.text = String(Int(quantityStepper.value))
+        updateDoneButton()
         return (itemListCopy[row].name)
     
     }
@@ -181,6 +187,7 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         else
         {
             quantityStepper.maximumValue = 0
+            updateDoneButton()
         }
     }
     

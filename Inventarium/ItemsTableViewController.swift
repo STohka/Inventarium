@@ -178,7 +178,7 @@ class ItemsTableViewController: UITableViewController {
             }
             else if (items[indexPath.row].checkedCount > 0){
                 
-                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 self.present(alert, animated: true)
             }
         } else if editingStyle == .insert {
