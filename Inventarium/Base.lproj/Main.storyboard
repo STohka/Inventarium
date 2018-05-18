@@ -566,13 +566,6 @@
                                     <action selector="totalStepAction:" destination="1gi-Pj-SgR" eventType="valueChanged" id="1MX-UC-oOv"/>
                                 </connections>
                             </stepper>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVC-pf-xFg">
-                                <rect key="frame" x="320" y="132" width="129" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="00" placeholder="00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7IP-LX-DJ6">
                                 <rect key="frame" x="277" y="281" width="215" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -640,6 +633,13 @@
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="60"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-p6-6NW">
+                                <rect key="frame" x="0.0" y="126" width="768" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -647,7 +647,7 @@
                         <outlet property="chkNumber" destination="CtV-lU-qXy" id="6ln-1l-pP3"/>
                         <outlet property="currentItemCountInput" destination="HJc-5k-tLP" id="xW4-UF-rsi"/>
                         <outlet property="currentItemCountStepper" destination="f1E-9w-onJ" id="kle-d5-SI5"/>
-                        <outlet property="itemNameInput" destination="FVC-pf-xFg" id="zXp-Pa-mSF"/>
+                        <outlet property="itemNameLabel" destination="Oca-p6-6NW" id="StY-qf-Vdd"/>
                         <outlet property="saveButton" destination="ukW-4d-FOW" id="NBt-zt-8kA"/>
                         <outlet property="totalItemCountInput" destination="7IP-LX-DJ6" id="ik8-Q9-UfL"/>
                         <outlet property="totalItemCountStepper" destination="9Xw-Hr-aSZ" id="TiW-Ju-ebn"/>
