@@ -51,16 +51,16 @@
 		9D3205D220850B060060C318 /* Inventorium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventorium.swift; sourceTree = "<group>"; };
 		9D43B4F2207BD1F000B1C45F /* CheckoutDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutDetailViewController.swift; sourceTree = "<group>"; };
 		9D6071BB2062C28A0049D9AF /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
-		9D6307B8200FC34700D6D134 /* Inventarium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inventarium.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6307B8200FC34700D6D134 /* Inventorium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inventorium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6307BB200FC34700D6D134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6307C2200FC34700D6D134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D6307C4200FC34700D6D134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D6307C7200FC34700D6D134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D6307C9200FC34700D6D134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D6307CE200FC34700D6D134 /* InventariumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InventariumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6307CE200FC34700D6D134 /* InventoriumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InventoriumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6307D2200FC34700D6D134 /* InventariumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventariumTests.swift; sourceTree = "<group>"; };
 		9D6307D4200FC34700D6D134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D6307D9200FC34700D6D134 /* InventariumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InventariumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6307D9200FC34700D6D134 /* InventoriumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InventoriumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6307DD200FC34700D6D134 /* InventariumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventariumUITests.swift; sourceTree = "<group>"; };
 		9D6307DF200FC34700D6D134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D6307EB200FC39B00D6D134 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
@@ -115,9 +115,9 @@
 		9D6307B9200FC34700D6D134 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D6307B8200FC34700D6D134 /* Inventarium.app */,
-				9D6307CE200FC34700D6D134 /* InventariumTests.xctest */,
-				9D6307D9200FC34700D6D134 /* InventariumUITests.xctest */,
+				9D6307B8200FC34700D6D134 /* Inventorium.app */,
+				9D6307CE200FC34700D6D134 /* InventoriumTests.xctest */,
+				9D6307D9200FC34700D6D134 /* InventoriumUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9D6307B7200FC34700D6D134 /* Inventarium */ = {
+		9D6307B7200FC34700D6D134 /* Inventorium */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D6307E2200FC34700D6D134 /* Build configuration list for PBXNativeTarget "Inventarium" */;
+			buildConfigurationList = 9D6307E2200FC34700D6D134 /* Build configuration list for PBXNativeTarget "Inventorium" */;
 			buildPhases = (
 				9D6307B4200FC34700D6D134 /* Sources */,
 				9D6307B5200FC34700D6D134 /* Frameworks */,
@@ -183,14 +183,14 @@
 			);
 			dependencies = (
 			);
-			name = Inventarium;
+			name = Inventorium;
 			productName = Inventarium;
-			productReference = 9D6307B8200FC34700D6D134 /* Inventarium.app */;
+			productReference = 9D6307B8200FC34700D6D134 /* Inventorium.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9D6307CD200FC34700D6D134 /* InventariumTests */ = {
+		9D6307CD200FC34700D6D134 /* InventoriumTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D6307E5200FC34700D6D134 /* Build configuration list for PBXNativeTarget "InventariumTests" */;
+			buildConfigurationList = 9D6307E5200FC34700D6D134 /* Build configuration list for PBXNativeTarget "InventoriumTests" */;
 			buildPhases = (
 				9D6307CA200FC34700D6D134 /* Sources */,
 				9D6307CB200FC34700D6D134 /* Frameworks */,
@@ -201,14 +201,14 @@
 			dependencies = (
 				9D6307D0200FC34700D6D134 /* PBXTargetDependency */,
 			);
-			name = InventariumTests;
+			name = InventoriumTests;
 			productName = InventariumTests;
-			productReference = 9D6307CE200FC34700D6D134 /* InventariumTests.xctest */;
+			productReference = 9D6307CE200FC34700D6D134 /* InventoriumTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9D6307D8200FC34700D6D134 /* InventariumUITests */ = {
+		9D6307D8200FC34700D6D134 /* InventoriumUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D6307E8200FC34700D6D134 /* Build configuration list for PBXNativeTarget "InventariumUITests" */;
+			buildConfigurationList = 9D6307E8200FC34700D6D134 /* Build configuration list for PBXNativeTarget "InventoriumUITests" */;
 			buildPhases = (
 				9D6307D5200FC34700D6D134 /* Sources */,
 				9D6307D6200FC34700D6D134 /* Frameworks */,
@@ -219,9 +219,9 @@
 			dependencies = (
 				9D6307DB200FC34700D6D134 /* PBXTargetDependency */,
 			);
-			name = InventariumUITests;
+			name = InventoriumUITests;
 			productName = InventariumUITests;
-			productReference = 9D6307D9200FC34700D6D134 /* InventariumUITests.xctest */;
+			productReference = 9D6307D9200FC34700D6D134 /* InventoriumUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -252,7 +252,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9D6307B3200FC34700D6D134 /* Build configuration list for PBXProject "Inventarium" */;
+			buildConfigurationList = 9D6307B3200FC34700D6D134 /* Build configuration list for PBXProject "Inventorium" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -265,9 +265,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9D6307B7200FC34700D6D134 /* Inventarium */,
-				9D6307CD200FC34700D6D134 /* InventariumTests */,
-				9D6307D8200FC34700D6D134 /* InventariumUITests */,
+				9D6307B7200FC34700D6D134 /* Inventorium */,
+				9D6307CD200FC34700D6D134 /* InventoriumTests */,
+				9D6307D8200FC34700D6D134 /* InventoriumUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -343,12 +343,12 @@
 /* Begin PBXTargetDependency section */
 		9D6307D0200FC34700D6D134 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9D6307B7200FC34700D6D134 /* Inventarium */;
+			target = 9D6307B7200FC34700D6D134 /* Inventorium */;
 			targetProxy = 9D6307CF200FC34700D6D134 /* PBXContainerItemProxy */;
 		};
 		9D6307DB200FC34700D6D134 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9D6307B7200FC34700D6D134 /* Inventarium */;
+			target = 9D6307B7200FC34700D6D134 /* Inventorium */;
 			targetProxy = 9D6307DA200FC34700D6D134 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -509,7 +509,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.District196.InventariumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inventarium.app/Inventarium";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inventorium.app/Inventorium";
 			};
 			name = Debug;
 		};
@@ -523,7 +523,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.District196.InventariumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inventarium.app/Inventarium";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Inventorium.app/Inventorium";
 			};
 			name = Release;
 		};
@@ -556,7 +556,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9D6307B3200FC34700D6D134 /* Build configuration list for PBXProject "Inventarium" */ = {
+		9D6307B3200FC34700D6D134 /* Build configuration list for PBXProject "Inventorium" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D6307E0200FC34700D6D134 /* Debug */,
@@ -565,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D6307E2200FC34700D6D134 /* Build configuration list for PBXNativeTarget "Inventarium" */ = {
+		9D6307E2200FC34700D6D134 /* Build configuration list for PBXNativeTarget "Inventorium" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D6307E3200FC34700D6D134 /* Debug */,
@@ -574,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D6307E5200FC34700D6D134 /* Build configuration list for PBXNativeTarget "InventariumTests" */ = {
+		9D6307E5200FC34700D6D134 /* Build configuration list for PBXNativeTarget "InventoriumTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D6307E6200FC34700D6D134 /* Debug */,
@@ -583,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D6307E8200FC34700D6D134 /* Build configuration list for PBXNativeTarget "InventariumUITests" */ = {
+		9D6307E8200FC34700D6D134 /* Build configuration list for PBXNativeTarget "InventoriumUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D6307E9200FC34700D6D134 /* Debug */,
