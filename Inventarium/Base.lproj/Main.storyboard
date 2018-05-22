@@ -19,7 +19,7 @@
         <!--General View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="GeneralViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="GeneralViewController" customModule="Inventorium" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -41,7 +41,7 @@
         <!--History-->
         <scene sceneID="bYJ-WJ-48Q">
             <objects>
-                <tableViewController id="ryS-K3-oyS" userLabel="History" customClass="HistoryTableViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ryS-K3-oyS" userLabel="History" customClass="HistoryTableViewController" customModule="Inventorium" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="AOy-HL-7dO">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,13 +57,16 @@
                                 <segment title="Return Date"/>
                             </segments>
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="SortingAction:" destination="ryS-K3-oyS" eventType="valueChanged" id="wQm-4K-uhf"/>
+                            </connections>
                         </segmentedControl>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryTableViewCell" id="fFQ-7y-3Vf" customClass="HistoryTableViewCell" customModule="Inventarium" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryTableViewCell" id="fFQ-7y-3Vf" customClass="HistoryTableViewCell" customModule="Inventorium" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="58" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fFQ-7y-3Vf" id="fWs-QD-yqz">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHS-Dm-2pi" userLabel="Item Name Label">
@@ -128,6 +131,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="history" id="fCf-bS-OZt"/>
+                    <connections>
+                        <outlet property="SortingTabs" destination="UaT-v3-LdD" id="Nkf-oF-Ky6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VT8-iQ-rw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,7 +142,7 @@
         <!--Checkout Detail View Controller-->
         <scene sceneID="QCR-vb-Tlm">
             <objects>
-                <viewController id="BFz-gp-fiD" customClass="CheckoutDetailViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BFz-gp-fiD" customClass="CheckoutDetailViewController" customModule="Inventorium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vgp-ry-6uv"/>
                         <viewControllerLayoutGuide type="bottom" id="hvr-1W-5dr"/>
@@ -270,7 +276,7 @@
         <!--Items-->
         <scene sceneID="yBn-6Q-FM3">
             <objects>
-                <tableViewController id="7wU-xy-60E" customClass="ItemsTableViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7wU-xy-60E" customClass="ItemsTableViewController" customModule="Inventorium" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="C1m-Jo-wEV">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -302,11 +308,11 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemsTableViewCell" rowHeight="90" id="Xir-jN-QKP" customClass="ItemsTableViewCell" customModule="Inventarium" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemsTableViewCell" rowHeight="90" id="Xir-jN-QKP" customClass="ItemsTableViewCell" customModule="Inventorium" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xir-jN-QKP" id="mfX-eM-Gv3">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXA-yF-GII">
@@ -352,7 +358,7 @@
         <!--New Item View Controller-->
         <scene sceneID="Ild-zb-OKZ">
             <objects>
-                <viewController id="Yvx-n3-54b" customClass="NewItemViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yvx-n3-54b" customClass="NewItemViewController" customModule="Inventorium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xfz-n9-adw"/>
                         <viewControllerLayoutGuide type="bottom" id="LAB-nD-Jwd"/>
@@ -426,7 +432,7 @@
         <!--Checkout-->
         <scene sceneID="U6e-CO-pDQ">
             <objects>
-                <viewController id="nNK-Pj-peF" userLabel="Checkout" customClass="CheckoutViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nNK-Pj-peF" userLabel="Checkout" customClass="CheckoutViewController" customModule="Inventorium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nO0-db-W9Q"/>
                         <viewControllerLayoutGuide type="bottom" id="ICN-7B-DGB"/>
@@ -542,7 +548,7 @@
         <!--Edit Item View Controller-->
         <scene sceneID="EYo-Pf-rRi">
             <objects>
-                <viewController id="1gi-Pj-SgR" customClass="EditItemViewController" customModule="Inventarium" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1gi-Pj-SgR" customClass="EditItemViewController" customModule="Inventorium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bx1-RJ-6v2"/>
                         <viewControllerLayoutGuide type="bottom" id="Lae-IV-gxH"/>

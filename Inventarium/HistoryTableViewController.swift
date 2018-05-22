@@ -10,6 +10,7 @@ import UIKit
 import os.log
 
 class HistoryTableViewController: UITableViewController {
+    @IBOutlet weak var SortingTabs: UISegmentedControl!
     
     
     var checkouts = [Checkout]()
@@ -31,11 +32,37 @@ class HistoryTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         totalData?.restore(fileName: "saved")
         checkouts = (totalData?.CheckListData)!
+        SortingTabs.selectedSegmentIndex = 3
        tableView.reloadData()
         
        
     }
 
+    @IBAction func SortingAction(_ sender: Any) {
+        if SortingTabs.selectedSegmentIndex == 0{
+            print("sort name")
+            checkouts.sort(by: { $0.name < $1.name })
+             tableView.reloadData()
+        }
+        else if SortingTabs.selectedSegmentIndex == 1{
+            checkouts.sort(by: { $0.group < $1.group})
+             tableView.reloadData()
+        }
+        else if SortingTabs.selectedSegmentIndex == 2{
+            checkouts.sort(by: { $0.itemType < $1.itemType })
+             tableView.reloadData()
+        }
+        else if SortingTabs.selectedSegmentIndex == 3{
+            checkouts.sort(by: { $0.currentDate > $1.currentDate })
+             tableView.reloadData()
+        }
+        else if SortingTabs.selectedSegmentIndex == 4{
+            checkouts.sort(by: { $0.returnDate > $1.returnDate })
+             tableView.reloadData()
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
@@ -50,6 +77,21 @@ class HistoryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if SortingTabs.selectedSegmentIndex == 0{
+            return checkouts.count
+        }
+        else if SortingTabs.selectedSegmentIndex == 1{
+            return checkouts.count
+        }
+        else if SortingTabs.selectedSegmentIndex == 2{
+            return checkouts.count
+        }
+        else if SortingTabs.selectedSegmentIndex == 3{
+            return checkouts.count
+        }
+        else if SortingTabs.selectedSegmentIndex == 4{
+            return checkouts.count
+        }
         return checkouts.count
     }
 
