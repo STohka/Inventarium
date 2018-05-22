@@ -53,11 +53,11 @@ class HistoryTableViewController: UITableViewController {
              tableView.reloadData()
         }
         else if SortingTabs.selectedSegmentIndex == 3{
-            checkouts.sort(by: { $0.currentDate > $1.currentDate })
+            checkouts.sort(by: { $0.currentDate < $1.currentDate })
              tableView.reloadData()
         }
         else if SortingTabs.selectedSegmentIndex == 4{
-            checkouts.sort(by: { $0.returnDate > $1.returnDate })
+            checkouts.sort(by: { $0.returnDate < $1.returnDate })
              tableView.reloadData()
         }
     }
