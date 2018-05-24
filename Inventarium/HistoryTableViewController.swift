@@ -107,11 +107,13 @@ class HistoryTableViewController: UITableViewController {
         let dateFormat = DateFormatter()
         dateFormat.dateStyle = .short
         let Cdate = dateFormat.string(from: historyItem.currentDate)
+        let Rdate = dateFormat.string(from: historyItem.returnDate)
         
         cell.NameLabel.text = historyItem.name
         cell.itemNameLabel.text = historyItem.itemType
         cell.itemQuantityLabel.text = String(historyItem.quantity)
         cell.dateBorrowedLabel.text = Cdate
+        cell.returnDateLabel.text = Rdate
         cell.groupLabel.text = historyItem.group
         cell.quantityTag.text = "Quantity"
         if(cell.groupLabel.text == "")
