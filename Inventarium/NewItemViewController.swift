@@ -80,7 +80,21 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        updateSaveButtonState()
+        let count: Int = (totalData?.ItemListData.count)!
+        let alert = UIAlertController(title: "Notice", message: "This item has already exist.", preferredStyle: .alert)
+        alert.view.tintColor = UIColor.gray
+        for i in 0...(count - 1){
+            if (totalData?.ItemListData[i].name == itemNameInput.text)
+            {
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                saveButton.isEnabled = false
+            }
+            else {
+                updateSaveButtonState()
+            }
+        }
+       
         
     }
 
