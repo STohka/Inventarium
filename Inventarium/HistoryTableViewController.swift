@@ -40,7 +40,6 @@ class HistoryTableViewController: UITableViewController {
 
     @IBAction func SortingAction(_ sender: Any) {
         if SortingTabs.selectedSegmentIndex == 0{
-            print("sort name")
             checkouts.sort(by: { $0.name < $1.name })
              tableView.reloadData()
         }
