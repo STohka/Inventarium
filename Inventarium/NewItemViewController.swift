@@ -83,6 +83,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         let count: Int = (totalData?.ItemListData.count)!
         let alert = UIAlertController(title: "Notice", message: "This item has already exist.", preferredStyle: .alert)
         alert.view.tintColor = UIColor.gray
+        if(count > 0){
         for i in 0...(count - 1){
             if (totalData?.ItemListData[i].name == itemNameInput.text)
             {
@@ -94,7 +95,10 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
                 updateSaveButtonState()
             }
         }
-       
+        }
+        else{
+            updateSaveButtonState()
+        }
         
     }
 
