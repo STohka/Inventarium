@@ -93,7 +93,9 @@ class CheckoutViewController: UIViewController,UITextFieldDelegate, UIPickerView
         groupInput.text = ""
         quantityStepper.value = 0
         itemInput.selectRow(0, inComponent: 0, animated: true)
+        if(itemListCopy.count > 0){
         quantityStepper.maximumValue = Double(itemListCopy[0].currentCount)
+        }
         itemIndex = 0
         quantityLabel.text = String(Int(quantityStepper.value))
         dateInput.date = Date()
